@@ -74,24 +74,24 @@ const faqs = [
       "Heu de pensar que tot atleta té associades despeses federatives i d'entrenadors. Un cop signada ...",
   },
   {
-    id: 5,
+    id: 6,
     question: "Tinc descompte si s'apunten germans",
     answer:
       "Només amb l'opció 1 de 2 o 3 dies d'entrenament, en cas de germans, a partir del segón només pagaria 185 €/any en comptes dels 255 €/any.",
   },
   {
-    id: 5,
+    id: 7,
     question: 'És obligatori anar a les competicions',
     answer:
       'No és obligatori, tot i que el club fomenta la participació esportiva i per tant animem a que els atletes participin a les competicions. No obstant és decisió del atleta o pares participar-hi. ',
   },
   {
-    id: 5,
-    question: "Quin horaris té l'escola d'atletisme?",
+    id: 8,
+    question: "Quins horaris té l'escola d'atletisme?",
     answer: 'Els horaris són: Dilluns, Dimecres i Divendres de 18:00 a 19:30',
   },
   {
-    id: 5,
+    id: 9,
     question: 'Quina roba he portar?',
     answer:
       "A diferencia d'altres escoles, no cal anar uniformats als entrenaments per tant podeu portar la vostra roba esportiva. Només a les competicions cal competir amb la roba del club, però amb l'inscripcio ve inclòs la samarreta i pantalò o calçetes.",
@@ -105,11 +105,11 @@ export default function SchoolPrices() {
         <div className="mx-auto max-w-7xl py-24 px-4 sm:px-6 lg:px-8">
           <div className="sm:align-center sm:flex sm:flex-col">
             <h1 className="text-center text-2xl font-bold tracking-tight text-gray-900 sm:text-4xl lg:text-5xl">
-              Preus de l'Escola d'atletisme 2022/2023
+              Preus de l&lsquo;Escola d&lsquo;atletisme 2022/2023
             </h1>
             <p className="mt-5 text-base text-gray-500 sm:text-center md:text-xl">
               Entenem les necessitats de les families, per això em adecuat els
-              preus als dies d'entrenament i al nombre de fills inscrits.
+              preus als dies d&lsquo;entrenament i al nombre de fills inscrits.
             </p>
           </div>
           <div className="mt-12 space-y-4 sm:mt-16 sm:grid sm:grid-cols-2 sm:gap-6 sm:space-y-0 lg:mx-auto lg:max-w-4xl xl:mx-0 xl:max-w-none xl:grid-cols-2">
@@ -160,17 +160,17 @@ export default function SchoolPrices() {
           </div>
         </div>
       </div>
-      <div className="bg-gray-50">
+      <div className="bg-red-50">
         {/* FAQ */}
         <div className="mx-auto max-w-7xl py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
           <h2 className="text-center text-3xl font-bold tracking-tight text-gray-900">
-            Frequently asked questions
+            Preguntes freqüents
           </h2>
           <div className="mt-12">
             <dl className="space-y-10 md:grid md:grid-cols-2 md:grid-rows-2 md:gap-x-8 md:gap-y-12 md:space-y-0 lg:grid-cols-3">
               {faqs.map((faq) => (
                 <div key={faq.id} className="space-y-2">
-                  <dt className="text-lg font-medium leading-6 text-gray-900">
+                  <dt className="text-lg font-medium font-bold leading-6 text-gray-900">
                     {faq.question}
                   </dt>
                   <dd className="text-base text-gray-500">{faq.answer}</dd>

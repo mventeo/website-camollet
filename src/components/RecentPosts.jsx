@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import DateComponent from '@/components/date'
+
 import { format } from 'date-fns'
 import { ca } from 'date-fns/locale'
 
@@ -21,11 +21,8 @@ export function RecentPosts({ posts }) {
           </div>
           <div className="mx-auto mt-6 max-w-lg gap-5 md:mt-12 lg:max-w-none">
             {posts.map((post) => (
-              <>
-                <div
-                  key={post.title}
-                  className="mb-1 bg-gradient-to-r from-red-500 to-red-300 py-1"
-                ></div>
+              <div key={post.title}>
+                <div className="mb-1 bg-gradient-to-r from-red-500 to-red-300 py-1"></div>
                 <div className="grid grid-cols-1 flex-col overflow-hidden pb-2 lg:grid-cols-2">
                   <div className="grid grid-cols-1 lg:grid-cols-2">
                     <div>
@@ -67,30 +64,9 @@ export function RecentPosts({ posts }) {
                         </div>
                       </div>
                     </div>
-                    {/* <div className="mt-6 flex items-center">
-                    <div className="flex-shrink-0">
-                      <a href={post.author}>
-                        <span className="sr-only">{post.author.name}</span>
-                        <picture>
-                          <img
-                            className="h-10 w-10 rounded-full"
-                            src={post.author.picture.url}
-                            alt=""
-                          />
-                        </picture>
-                      </a>
-                    </div>
-                    <div className="ml-3">
-                      <p className="text-sm font-medium text-gray-900">
-                        <a href={post.author} className="hover:underline">
-                          {post.author.name}
-                        </a>
-                      </p>
-                    </div>
-                  </div> */}
                   </div>
                 </div>
-              </>
+              </div>
             ))}
           </div>
         </div>

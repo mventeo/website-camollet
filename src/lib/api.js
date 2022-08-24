@@ -27,6 +27,8 @@ coverImage{
     }
   }
 }
+coverImageAuthor
+coverImageAuthorUrl
 tags:contentfulMetadata{
   tags{
     name
@@ -46,6 +48,7 @@ author{
   name
 }
 moreInfoText
+moreInfoUrl
 galleryCollection{
   items{
     title
@@ -293,7 +296,6 @@ export async function getPostAndMorePosts(slug, preview) {
 }
 
 export async function getClubLegislation() {
-  console.log('hi')
   const query = `query {
     assetCollection(where:{title:"Normativa del Club"}){
       items{

@@ -154,7 +154,10 @@ export function Footer({ legislation }) {
                 ))}
                 {legislation && (
                   <li>
-                    <Link href={legislation.url} target="_blanck">
+                    <Link
+                      href="https://assets.ctfassets.net/8rp1uuyxnm8g/7lShD021W2i2vZm9bWRg0r/7246dcdd2220bcb7a4f38a882e5305a7/Regalment_regim_intern_CAMollet.pdf"
+                      target="_blanck"
+                    >
                       Reglament Intern
                     </Link>
                   </li>
