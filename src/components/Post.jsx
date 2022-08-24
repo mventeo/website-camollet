@@ -44,22 +44,22 @@ export function ContentPost({ post }) {
   return (
     <Container className="bg-white pb-16">
       <div className="bg-gradient-to-b from-red-600 to-red-100 p-2 pb-24">
-        <div className="text-justify text-4xl font-bold text-stone-900">
+        <div className="text-justify text-2xl xs:text-4xl font-bold text-stone-900">
           {post.title}
         </div>
         {post.subtitle ? (
-          <div className="py-1 text-justify text-2xl font-semibold text-white">
+          <div className="py-1 text-justify xs:text-2xl text-xl font-semibold text-white">
             {post.subtitle}
           </div>
         ) : (
           <div className="py-1">&nbsp;</div>
         )}
       </div>
-      <div id="content-docs" className="-mt-16 grid grid-cols-3 gap-x-8 px-4">
+      <div id="content-docs" className="-mt-16 grid xs:grid-cols-3 grid-cols-1 gap-x-8 px-4">
         {/* Content Column */}
-        <div className="col-span-2 rounded-t-lg border-2 border-stone-100 bg-white shadow-lg">
+        <div className="xs:col-span-2 rounded-t-lg border-2 border-stone-100 bg-white shadow-lg">
           {/* author avatar */}
-          <div className="grid grid-cols-2 pt-2 pl-2">
+          <div className="grid xs:grid-cols-2 grid-cols-1 pt-2 pl-2">
             <div>
               {post.author && (
                 <Avatar
@@ -102,7 +102,7 @@ export function ContentPost({ post }) {
         </div>
 
         {/* Right Column */}
-        <div>
+        <div className='xs:py-0 py-2'>
           <div className="mb-2 divide-y-2 divide-gray-100 rounded-lg border-2 border-stone-100 bg-white px-2 pb-6 shadow-lg">
             <h3 className="text-center font-bold">Documents</h3>
             {hasDocs && (

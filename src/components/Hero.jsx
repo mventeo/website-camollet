@@ -30,7 +30,7 @@ export function Hero({ heroPost }) {
           <div className="mx-auto w-full max-w-7xl pt-16 pb-20 text-center lg:py-24 lg:text-left">
             <div className="px-4 sm:px-8 lg:w-1/2 xl:pr-16">
               <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl sm:tracking-tight md:text-6xl md:tracking-tight lg:text-5xl lg:tracking-tight xl:text-6xl xl:tracking-tight">
-                <span className="block xl:inline">{heroPost.title}</span>{' '}
+                <span className="block xl:inline">{heroPost.title}</span><br/>
                 <span className="block text-2xl text-red-600 xl:inline">
                   {heroPost.subtitle}
                 </span>
