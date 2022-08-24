@@ -4,10 +4,12 @@ import Link from 'next/link'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import { BLOCKS } from '@contentful/rich-text-types'
 import markdownStyles from '@/components/markdown-styles.module.css'
-import RichTextAsset from '@/components/rich-text-asset'
+import RichTextAsset from '@/components/RichTextAsset'
 
-import { DocumentIcon } from '@heroicons/react/outline'
+import { DocumentIcon, CameraIcon } from '@heroicons/react/outline'
 import { Container } from './Container'
+import { PhotoBy } from './layout/PhotoBy'
+import { Button } from './Button'
 
 const customMarkdownOptions = (content) => ({
   renderNode: {
@@ -36,14 +38,14 @@ export function Hero({ heroPost }) {
               <div className="mx-auto mt-3 max-w-md text-lg text-gray-500 sm:text-xl md:mt-5 md:max-w-3xl">
                 {heroPost.excerpt}
               </div>
-              {heroPost.moreInfoLink && (
+              {heroPost.moreInfoText && (
                 <div className="mt-10 sm:flex sm:justify-center lg:justify-center">
                   <div className="rounded-md shadow">
                     <Link
-                      href="/escola"
-                      className="flex w-full items-center justify-center rounded-md border border-transparent bg-red-600 px-8 py-3 text-base font-medium text-white hover:bg-red-700 md:py-4 md:px-10 md:text-lg"
+                      href={heroPost.moreInfoUrl}
+                      className="flex h-12 w-full items-center justify-center rounded-md border border-transparent bg-red-600 px-8 py-3 text-base font-medium text-white hover:bg-red-700 md:py-4 md:px-10 md:text-lg"
                     >
-                      Vull Informació
+                      {heroPost.moreInfoText}
                     </Link>
                   </div>
                 </div>
@@ -83,10 +85,13 @@ export function Hero({ heroPost }) {
                   src={heroPost.coverImage.url}
                   alt=""
                 />
+                {heroPost.coverImageAuthor && (
+                  <PhotoBy
+                    author={heroPost.coverImageAuthor}
+                    url={heroPost.coverImageAuthorUrl}
+                  />
+                )}
               </picture>
-              {/* <span>
-            https://unsplash.com/es/fotos/-4trKf0Kbow?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink
-          </span> */}
             </div>
           )}
         </main>

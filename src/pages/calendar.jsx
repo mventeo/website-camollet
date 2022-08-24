@@ -1,4 +1,4 @@
-import { Header } from '@/components/Header'
+import { Header } from '@/components/layout/Header'
 import { CalendarGroup } from '@/components/Calendar'
 import { Container } from '@/components/Container'
 

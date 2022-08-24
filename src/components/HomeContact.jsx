@@ -14,7 +14,8 @@ export default function HomeContact() {
               <div className="mt-3">
                 <p className="text-lg text-gray-500">
                   Atenció al soci, altes/baixes, gestió atletes, fitxes
-                  federatives i atenció a families de l'Escola (només dimecres)
+                  federatives i atenció a families de l&lsquo;Escola (només
+                  dimecres)
                 </p>
               </div>
               <div className="mt-9">
@@ -59,7 +60,7 @@ export default function HomeContact() {
               <h2 className="text-2xl font-bold text-gray-900 sm:text-3xl sm:tracking-tight">
                 On som?
                 <span className="text-sm">
-                  Pistes municipals "La Pedra Salvadora"
+                  Pistes municipals &ldquo;La Pedra Salvadora&rdquo;
                 </span>
               </h2>
               <iframe
@@ -67,7 +68,7 @@ export default function HomeContact() {
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2985.963751205537!2d2.2094421161549738!3d41.548382093960555!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a4bf250bc8604b%3A0xf5e3faaf643f17d0!2sClub%20Atl%C3%A8tic%20Mollet!5e0!3m2!1ses!2ses!4v1661190128653!5m2!1ses!2ses"
                 allowFullScreen=""
                 loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"
+                referrerPolicy="no-referrer-when-downgrade"
               ></iframe>
             </div>
           </div>

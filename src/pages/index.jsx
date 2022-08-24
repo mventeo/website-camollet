@@ -1,8 +1,3 @@
-// import Container from "../components/container";
-// import MoreStories from "../components/more-stories";
-// import HeroPost from "../components/hero-post";
-// import Intro from "../components/intro";
-// import Layout from "../components/layout";
 import {
   getActiveHeroPost,
   getRecentPostsForHome,
@@ -10,17 +5,12 @@ import {
 } from '../lib/api'
 import Head from 'next/head'
 import { CMS_NAME } from '../lib/constants'
-import { Header } from '@/components/Header'
+import { Header } from '@/components/layout/Header'
 import { Hero } from '@/components/Hero'
 import { RecentPosts } from '@/components/RecentPosts'
 import { Footer } from '@/components/Footer'
-import { PhoneIcon, MailIcon } from '@heroicons/react/solid'
 import { Sponsors } from '@/components/Sponsors'
-import {
-  GlobeAltIcon,
-  LightningBoltIcon,
-  ScaleIcon,
-} from '@heroicons/react/outline'
+import { LightningBoltIcon, ScaleIcon } from '@heroicons/react/outline'
 import { Container } from '@/components/Container'
 import { Button } from '@/components/Button'
 import HomeContact from '@/components/HomeContact'
@@ -45,7 +35,7 @@ const features = [
   },
 ]
 
-export default function Index({ preview, posts, heroPost, legislation }) {
+export default function Index({ preview, posts, heroPost }) {
   return (
     <>
       <Head>
@@ -67,12 +57,12 @@ export default function Index({ preview, posts, heroPost, legislation }) {
             Fes-te soci del Club Atlètic Mollet
           </h2>
           <p className="mt-4  px-8 pb-10 text-lg text-zinc-600">
-            Triar la millor opció per gaudir de l'atletisme i l'esport a les
-            pistes municipals de Mollet del Vallès. Pots entrenar per el teu
-            compte, o amb un entrenador de manteniment.
+            Triar la millor opció per gaudir de l&apos;atletisme i l&apos;esport
+            a les pistes municipals de Mollet del Vallès. Pots entrenar per el
+            teu compte, o amb un entrenador de manteniment.
             <br />
-            Ets atleta? o vols practicar l'atletisme, apunta't a un dels nostres
-            grups de tecnificació.
+            Ets atleta? o vols practicar l&apos;atletisme, apunta&apos;t a un
+            dels nostres grups de tecnificació.
           </p>
           <div className="mx-auto max-w-xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
             <h2 className="sr-only">Fes-te soci del Club Atlètic Mollet.</h2>
@@ -104,18 +94,18 @@ export default function Index({ preview, posts, heroPost, legislation }) {
       <Container>
         <div className="bg-white py-12">
           <h2 className="text-center text-3xl font-bold tracking-tight text-zinc-700">
-            Aprén, forma't i diverteix-te a l'Escola d'atletisme
+            Aprén, forma&apos;t i diverteix-te a l&apos;Escola d&apos;atletisme
           </h2>
           <div className="grid px-4 lg:grid-cols-2">
             <div className="pt-24">
               <p className="mt-4 max-w-3xl pb-10 text-left text-lg text-zinc-600">
-                A l'escola del Club Atlètic Mollet,{' '}
+                A l&apos;escola del Club Atlètic Mollet,{' '}
                 <span className="font-bold text-red-500 ">
                   millor escola esportiva
-                </span>{' '}
+                </span>
                 de Mollet del Vallès de 2021, els vostres fills es formaran en
-                la pràctica de l'atletisme amb valors de respecte a l'esport i
-                els companys. <br />
+                la pràctica de l&apos;atletisme amb valors de respecte a
+                l&apos;esport i els companys. <br />
                 <br />A partir dels 6 anys i fins els 14, en horaris de 18:00 a
                 19:30, tots els dilluns, dimarts i divendres.
                 <br />
@@ -145,19 +135,7 @@ export default function Index({ preview, posts, heroPost, legislation }) {
         </div>
       </Container>
       <HomeContact />
-      <Footer legislation={legislation} />
-      {/* <Layout preview={preview}>
-        <Head>
-          <title>{CMS_NAME}</title>
-          <meta
-            name="description"
-            content="Most bookkeeping software is accurate, but hard to use. We make the opposite trade-off, and hope you don’t get audited."
-          />
-        </Head>
-        <Container>
-          <Intro posts={RecentPosts} />
-        </Container>
-      </Layout> */}
+      {/* <Footer legislation={legislation} /> */}
     </>
   )
 }
@@ -165,46 +143,7 @@ export default function Index({ preview, posts, heroPost, legislation }) {
 export async function getStaticProps({ preview = false }) {
   const posts = (await getRecentPostsForHome(preview)) ?? []
   const heroPost = (await getActiveHeroPost(preview)) ?? []
-  const legislation = await getClubLegislation()
-  console.log(posts)
   return {
-    props: { preview, posts, heroPost, legislation },
+    props: { preview, posts, heroPost },
   }
-}
-
-{
-  /* <>
-      <Head>
-        <title>TaxPal - Accounting made simple for small businesses</title>
-        <meta
-          name="description"
-          content="Most bookkeeping software is accurate, but hard to use. We make the opposite trade-off, and hope you don’t get audited."
-        />
-      </Head>
-      <Header />
-      <main>
-        <Hero />
-        <PrimaryFeatures />
-        <SecondaryFeatures />
-        <CallToAction />
-        <Testimonials />
-        <Pricing />
-        <Faqs />
-      </main>
-      <Footer />
-    </> */
-}
-
-{
-  /* {heroPost && (
-            <HeroPost
-              title={heroPost.title}
-              coverImage={heroPost.coverImage}
-              date={heroPost.date}
-              author={heroPost.author}
-              slug={heroPost.slug}
-              excerpt={heroPost.excerpt}
-            />
-          )}
-          {morePosts.length > 0 && <MoreStories posts={morePosts} />} */
 }

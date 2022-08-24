@@ -70,7 +70,7 @@ function MobileNavigation() {
   return (
     <Popover>
       <Popover.Button
-        className="relative z-10 flex h-8 w-8 items-center justify-center [&:not(:focus-visible)]:focus:outline-none"
+        className="justify-right relative z-10 flex h-10 w-10 items-center [&:not(:focus-visible)]:focus:outline-none"
         aria-label="Toggle Navigation"
       >
         {({ open }) => <MobileNavIcon open={open} />}
@@ -105,9 +105,12 @@ function MobileNavigation() {
                 {link.name}
               </MobileNavLink>
             ))}
-
-            {/* <hr className="m-2 border-slate-300/40" />
-            <MobileNavLink href="/login">Sign in</MobileNavLink> */}
+            <hr />
+            <div className="flex justify-center">
+              <Button href="/register" color="red" className="mt-2 w-1/2">
+                <span>Fes-te soci</span>
+              </Button>
+            </div>
           </Popover.Panel>
         </Transition.Child>
       </Transition.Root>
@@ -119,31 +122,34 @@ export function Header() {
   return (
     <header className="py-2">
       <Container>
-        <nav className="relative z-50 flex justify-between">
-          <div className="flex items-center md:gap-x-12">
-            <Link href="/" aria-label="Home">
-              <Logo className="h-16 w-auto" />
-            </Link>
-            <div className="hidden md:gap-x-6 lg:flex">
-              {links.map((link) => (
-                <NavLink key={link.name} href={link.href}>
-                  {link.name}
-                </NavLink>
-              ))}
+        <nav className="relative z-50">
+          <div className="xs:grid-cols-3 grid grid-cols-4">
+            <div className="xs:col-span-2 col-span-3 flex justify-items-start">
+              <Link href="/" aria-label="Home">
+                <Logo className="h-16 w-auto" />
+              </Link>
+              <span className="xs:text-2xl xs:mt-3 text-1xl mt-5 pl-6 font-black uppercase sm:text-3xl">
+                Club Atlètic Mollet
+              </span>
+            </div>
+
+            <div className="mt-4 justify-items-end">
+              <Button href="/register" color="red" className="hidden md:flex">
+                <span>
+                  Fes-te soci <span className="hidden lg:inline">avui</span>
+                </span>
+              </Button>
+              <div className="flex justify-end md:hidden lg:mt-10">
+                <MobileNavigation />
+              </div>
             </div>
           </div>
-          <div className="mt-4 flex items-center gap-x-5 md:gap-x-8">
-            {/* <div className="hidden md:block">
-              <NavLink href="/login">Sign in</NavLink>
-            </div> */}
-            <Button href="/register" color="red">
-              <span>
-                Fes-te soci <span className="hidden lg:inline">avui</span>
-              </span>
-            </Button>
-            <div className="-mr-1 lg:hidden">
-              <MobileNavigation />
-            </div>
+          <div className="hidden justify-center md:flex md:gap-x-6">
+            {links.map((link) => (
+              <NavLink key={link.name} href={link.href}>
+                {link.name}
+              </NavLink>
+            ))}
           </div>
         </nav>
       </Container>
