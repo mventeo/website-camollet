@@ -29,12 +29,12 @@ coverImage{
 }
 coverImageAuthor
 coverImageAuthorUrl
-tags:contentfulMetadata{
+metadata:contentfulMetadata{
   tags{
     name
   }
 }
-docsCollection{
+docs:docsCollection{
   items{
     title
     description
@@ -46,6 +46,9 @@ hero
 showInHome
 author{
   name
+  picture{
+    url
+  }
 }
 moreInfoText
 moreInfoUrl
@@ -75,6 +78,17 @@ docs: documentsCollection {
     title
     fileName
     url
+  }
+}
+`
+
+const AGENDA_GRAPHQL_FIELDS = `
+slug
+title
+date
+metadata:contentfulMetadata{
+  tags{
+    name
   }
 }
 `
@@ -159,6 +173,14 @@ function extractGroupEntries(fetchResponse) {
 
 function extractGroup(fetchResponse) {
   return fetchResponse?.data?.trainingGroupCollection?.items?.[0]
+}
+
+function extractAgendaEntries(fetchResponse) {
+  return fetchResponse?.data?.agendaCollection?.items
+}
+
+function extractAgenda(fetchResponse) {
+  return fetchResponse?.data?.agendaCollection?.items?.[0]
 }
 
 export async function getPreviewPostBySlug(slug) {
@@ -246,6 +268,20 @@ export async function getActiveHeroPost(preview) {
     preview
   )
   return extractPost(entry)
+}
+
+export async function getNextAgenda() {
+  const entries = await fetchGraphQL(
+    `query {
+      agendaCollection(where:{date_gte:"2022-09-01"}, order:date_ASC) {
+        items {
+          ${AGENDA_GRAPHQL_FIELDS}
+        }
+      }
+    }`,
+    false
+  )
+  return extractAgendaEntries(entries)
 }
 
 export async function getAllCoaches(preview) {

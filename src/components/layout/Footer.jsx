@@ -1,6 +1,4 @@
-import { getClubLegislation } from '@/lib/api'
 import Link from 'next/link'
-import { Logo } from './Logo'
 
 /* This example requires Tailwind CSS v2.0+ */
 const navigation = {
@@ -33,13 +31,13 @@ const navigation = {
       name: "Federació Catalana d'Atletisme",
       href: 'https://fcatletisme.cat/',
       target: '_blank',
-      img: 'https://fcatletisme.cat/wp-content/uploads/logo_fca-escut.png',
+      img: '/logos/logo_escut.png',
     },
     {
       name: 'Real Federación Española de Atletismo',
       href: 'https://www.rfea.es',
       target: '_blank',
-      img: '/logos/rfea.jpg',
+      img: '/logos/logo_rfea.png',
     },
     // { name: 'Privacy', href: '#' },
     // { name: 'Terms', href: '#' },
@@ -86,44 +84,22 @@ const navigation = {
 
 export function Footer({ legislation }) {
   return (
-    <footer
-      // className="bg-gradient-to-b from-gray-50 to-white"
-      className="bg-white pt-2"
-      aria-labelledby="footer-heading"
-    >
+    <footer className="bg-gray-100 pt-2" aria-labelledby="footer-heading">
       <h2 id="footer-heading" className="sr-only">
         Footer
       </h2>
       <div className="mx-auto max-w-7xl py-12 px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1">
-          <div className="">
+          <div>
             <div>
-              <div>
-                <picture>
-                  <source srcSet="/logos/Logo CAM.png" media="image/png" />
-                  <img src="/logos/Logo CAM.png" alt="" />
-                </picture>
-              </div>
-              <p className="text-base font-semibold text-gray-500">
-                Fem atletisme des de 1931
-              </p>
-            </div>
-            {/* <div>
               <picture>
-                <source
-                  srcSet="/images/nit_esport_2021.png"
-                  media="image/png"
-                />
-                <img src="/images/nit_esport_2021.png" alt="" />
+                <source srcSet="/logos/Logo CAM.png" media="image/png" />
+                <img src="/logos/Logo CAM.png" alt="" />
               </picture>
-              <p className="text-sm text-gray-500">
-                Millor escola esportiva 2021
-              </p>
             </div>
-            <picture>
-              <source srcSet="/images/nit_esport_2021.png" media="image/png" />
-              <img src="/images/nit_esport_2021.png" alt="" />
-            </picture> */}
+            <p className="text-base font-semibold text-gray-500">
+              Fem atletisme des de 1931
+            </p>
 
             <div className="flex space-x-6">
               {navigation.social.map((item) => (
@@ -180,7 +156,9 @@ export function Footer({ legislation }) {
               </ul>
             </div>
             <div>
-              <h3 className="text-base font-medium text-gray-900">Grups</h3>
+              <h3 className="text-base font-medium text-gray-900">
+                Tecnificació
+              </h3>
               <ul role="list" className="mt-4 space-y-4">
                 {navigation.grups.map((item) => (
                   <li key={item.name}>
@@ -212,8 +190,10 @@ export function Footer({ legislation }) {
               </ul>
             </div>
             <div className="mt-12 md:mt-0">
-              <h3 className="text-base font-medium text-gray-900">Enllaços</h3>
-              <ul role="list" className="mt-1">
+              <h3 className="justify-center text-base font-medium text-gray-900">
+                Enllaços
+              </h3>
+              <ul role="list" className="mt-1 text-center">
                 {navigation.links.map((item) => (
                   <li key={item.name}>
                     <a
@@ -223,7 +203,11 @@ export function Footer({ legislation }) {
                     >
                       <picture>
                         <source srcSet={item.img} />
-                        <img src={item.img} alt={item.name} />
+                        <img
+                          src={item.img}
+                          alt={item.name}
+                          className="justify-center"
+                        />
                       </picture>
                     </a>
                   </li>

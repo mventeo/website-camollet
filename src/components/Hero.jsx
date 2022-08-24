@@ -27,7 +27,7 @@ export function Hero({ heroPost }) {
     <Container>
       <div className="relative bg-gradient-to-r from-red-200 to-red-50">
         <main className="lg:relative">
-          <div className="mx-auto w-full max-w-7xl pt-16 pb-20 text-center lg:py-48 lg:text-left">
+          <div className="mx-auto w-full max-w-7xl pt-16 pb-20 text-center lg:py-24 lg:text-left">
             <div className="px-4 sm:px-8 lg:w-1/2 xl:pr-16">
               <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl sm:tracking-tight md:text-6xl md:tracking-tight lg:text-5xl lg:tracking-tight xl:text-6xl xl:tracking-tight">
                 <span className="block xl:inline">{heroPost.title}</span>{' '}

@@ -2,18 +2,21 @@ import {
   getActiveHeroPost,
   getRecentPostsForHome,
   getClubLegislation,
+  getNextAgenda,
 } from '../lib/api'
 import Head from 'next/head'
 import { CMS_NAME } from '../lib/constants'
 import { Header } from '@/components/layout/Header'
 import { Hero } from '@/components/Hero'
 import { RecentPosts } from '@/components/RecentPosts'
-import { Footer } from '@/components/Footer'
+import { Footer } from '@/components/layout/Footer'
 import { Sponsors } from '@/components/Sponsors'
 import { LightningBoltIcon, ScaleIcon } from '@heroicons/react/outline'
 import { Container } from '@/components/Container'
 import { Button } from '@/components/Button'
 import HomeContact from '@/components/HomeContact'
+import { NextAgenda } from '@/components/NextAgenda'
+import { Banner } from '@/components/layout/Banner'
 
 const features = [
   {
@@ -35,9 +38,10 @@ const features = [
   },
 ]
 
-export default function Index({ preview, posts, heroPost }) {
+export default function Index({ preview, posts, heroPost, agenda }) {
   return (
     <>
+      {/* <Banner /> */}
       <Head>
         <title>Club Atlètic Mollet</title>
         <meta
@@ -48,7 +52,7 @@ export default function Index({ preview, posts, heroPost }) {
       <Header />
       <Hero heroPost={heroPost} />
       <Sponsors />
-
+      <NextAgenda agenda={agenda} />
       <RecentPosts posts={posts} />
 
       <Container>
@@ -135,7 +139,7 @@ export default function Index({ preview, posts, heroPost }) {
         </div>
       </Container>
       <HomeContact />
-      {/* <Footer legislation={legislation} /> */}
+      <Footer />
     </>
   )
 }
@@ -143,7 +147,8 @@ export default function Index({ preview, posts, heroPost }) {
 export async function getStaticProps({ preview = false }) {
   const posts = (await getRecentPostsForHome(preview)) ?? []
   const heroPost = (await getActiveHeroPost(preview)) ?? []
+  const agenda = (await getNextAgenda()) ?? []
   return {
-    props: { preview, posts, heroPost },
+    props: { preview, posts, heroPost, agenda },
   }
 }
