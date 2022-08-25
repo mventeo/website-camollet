@@ -19,7 +19,8 @@ export function Banner() {
                 Inscrits 2ª Jornada Campionat del Vallès
               </span>
               <span className="hidden md:inline">
-                Llistat d'inscrits 2ª jornada Campionats del Vallès disponible
+                Llistat d&lsquo;inscrits 2ª jornada Campionats del Vallès
+                disponible
               </span>
             </p>
           </div>
