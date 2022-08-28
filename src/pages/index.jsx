@@ -32,7 +32,7 @@ const features = [
   {
     name: 'Grup de Tecnificació',
     description:
-      'Entrena velocitat, tanques, salts, mig fons i fons, marxa amb els nostres reconeguts entrenadors. A partir de la categoria SUB-14',
+      'Entrena velocitat, tanques, llançaments, salts, mig fons i fons, marxa amb els nostres reconeguts entrenadors. A partir de la categoria SUB-14',
     icon: ScaleIcon,
   },
 ]
