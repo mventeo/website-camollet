@@ -268,7 +268,7 @@ export function ContentPost({ post, poster }) {
             )}
             {/* Poster */}
             {hasPoster && (
-              <div className="mb-2 mt-6 hidden  justify-center border-stone-100 bg-white md:flex">
+              <div className="mb-2 hidden  justify-center border-stone-100 md:flex">
                 <div className="flex">
                   <div className="relative h-96 w-80 shadow-lg">
                     <Image src={poster.coverImage.url} layout="fill" alt="" />

@@ -1,3 +1,4 @@
+import { Footer } from '@/components/layout/Footer'
 import { Header } from '@/components/layout/Header'
 import SchoolPrices from '@/components/school/Prices'
 
@@ -6,6 +7,7 @@ export default function Escola() {
     <>
       <Header />
       <SchoolPrices />
+      <Footer />
     </>
   )
 }
