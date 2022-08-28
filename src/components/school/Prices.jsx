@@ -1,5 +1,6 @@
 /* This example requires Tailwind CSS v2.0+ */
-import { CheckIcon } from '@heroicons/react/solid'
+import { CheckIcon, DocumentDownloadIcon } from '@heroicons/react/solid'
+import Link from 'next/link'
 
 const tiers = [
   {
@@ -27,6 +28,8 @@ const tiers = [
         desc: '85 € per compte bancari',
       },
     ],
+    extra:
+      'Preu de 180 €/any a partir del segón germà. Exemple: En cas de dos germans, el primer tindria una quota de 255 €/any i el segón de 180 €/any.',
   },
   {
     name: "Opció 2: 1 dia d'Entrenament",
@@ -38,7 +41,20 @@ const tiers = [
       'Samarreta i pantaló o calçeta de competició',
       'Grups de 15',
     ],
-    paymentsInfo: [],
+    paymentsInfo: [
+      {
+        period: 'Setembre',
+        desc: "60 € en metàlic en el moment de l'inscripció",
+      },
+      {
+        period: 'Desembre',
+        desc: '60 € per compte bancari',
+      },
+      {
+        period: 'Març',
+        desc: '60 € per compte bancari',
+      },
+    ],
   },
 ]
 
@@ -94,22 +110,23 @@ const faqs = [
     id: 9,
     question: 'Quina roba he portar?',
     answer:
-      "A diferencia d'altres escoles, no cal anar uniformats als entrenaments per tant podeu portar la vostra roba esportiva. Només a les competicions cal competir amb la roba del club, però amb l'inscripcio ve inclòs la samarreta i pantalò o calçetes.",
+      "No cal anar uniformats als entrenaments per tant podeu portar la vostra roba esportiva. Només a les competicions cal competir amb la roba del club, però amb l'inscripcio ve inclòs la samarreta i pantalò o calçetes.",
   },
 ]
 
 export default function SchoolPrices() {
   return (
     <>
-      <div className="bg-white">
-        <div className="mx-auto max-w-7xl py-24 px-4 sm:px-6 lg:px-8">
-          <div className="sm:align-center sm:flex sm:flex-col">
-            <h1 className="text-center text-2xl font-bold tracking-tight text-gray-900 sm:text-4xl lg:text-5xl">
+      <div>
+        <div className="mx-auto max-w-7xl bg-white py-8 px-4 sm:px-6 lg:px-8">
+          <div className="sm:align-center bg-red-500 sm:flex sm:flex-col">
+            <h1 className="text-center text-2xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">
               Preus de l&lsquo;Escola d&lsquo;atletisme 2022/2023
             </h1>
-            <p className="mt-5 text-base text-gray-500 sm:text-center md:text-xl">
-              Entenem les necessitats de les families, per això em adecuat els
-              preus als dies d&lsquo;entrenament i al nombre de fills inscrits.
+            <p className="mt-5 text-base text-white sm:text-center md:text-xl">
+              Tots els dilluns, dimecres i divendres de 18:00 a 19:30. Opcions
+              de 1 o 2-3 dies a la setmana. Preu reduit a partir del segón germà
+              només amb la opció de 2-3 dies setmana.
             </p>
           </div>
           <div className="mt-12 space-y-4 sm:mt-16 sm:grid sm:grid-cols-2 sm:gap-6 sm:space-y-0 lg:mx-auto lg:max-w-4xl xl:mx-0 xl:max-w-none xl:grid-cols-2">
@@ -119,7 +136,7 @@ export default function SchoolPrices() {
                 className="divide-y divide-gray-200 rounded-lg border border-gray-200 shadow-sm"
               >
                 <div className="p-6">
-                  <h2 className="text-lg font-medium leading-6 text-gray-900">
+                  <h2 className="text-lg font-medium font-black leading-6 text-gray-900">
                     {tier.name}
                   </h2>
                   <p className="mt-4 text-sm text-gray-500">
@@ -135,7 +152,7 @@ export default function SchoolPrices() {
                   </p>
                 </div>
                 <div className="px-6 pt-6 pb-8">
-                  <h3 className="text-sm font-medium text-gray-900">
+                  <h3 className="text-sm font-medium font-bold text-gray-900">
                     Informació dels pagaments
                   </h3>
                   <ul role="list" className="mt-6 space-y-4">
@@ -155,29 +172,66 @@ export default function SchoolPrices() {
                     ))}
                   </ul>
                 </div>
+                {tier.extra && (
+                  <div className="px-6 pt-6 pb-8 text-sm">{tier.extra}</div>
+                )}
               </div>
             ))}
           </div>
         </div>
       </div>
-      <div className="bg-red-50">
-        {/* FAQ */}
-        <div className="mx-auto max-w-7xl py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
-          <h2 className="text-center text-3xl font-bold tracking-tight text-gray-900">
-            Preguntes freqüents
-          </h2>
-          <div className="mt-12">
-            <dl className="space-y-10 md:grid md:grid-cols-2 md:grid-rows-2 md:gap-x-8 md:gap-y-12 md:space-y-0 lg:grid-cols-3">
-              {faqs.map((faq) => (
-                <div key={faq.id} className="space-y-2">
-                  <dt className="text-lg font-medium font-bold leading-6 text-gray-900">
-                    {faq.question}
-                  </dt>
-                  <dd className="text-base text-gray-500">{faq.answer}</dd>
-                </div>
-              ))}
-            </dl>
-          </div>
+      <div className="mx-auto max-w-7xl bg-white  px-4  sm:px-6 lg:px-8">
+        <h2 className="pb-6 text-center text-3xl font-bold tracking-tight text-zinc-700">
+          Documentació necessaria per formalitzar la inscripció
+        </h2>
+        <div className="flex justify-center pb-8">
+          <ul className="list-item">
+            <li className="flex py-1">
+              <CheckIcon className="h-6 w-6 text-green-400"></CheckIcon>
+              <span className="ml-4">1 fotografia de carne del nen/a</span>
+            </li>
+            <li className="flex py-1">
+              <CheckIcon className="h-6 w-6 text-green-400"></CheckIcon>
+              <span className="ml-4">1 fotocòpia del DNI nen/a</span>
+            </li>
+            <li className="flex py-1">
+              <CheckIcon className="h-6 w-6 text-green-400"></CheckIcon>
+              <span className="ml-4">1 fotocòpia del DNI pare/mare</span>
+            </li>
+            <li className="flex py-1">
+              <CheckIcon className="h-6 w-6 text-green-400"></CheckIcon>
+              <span className="ml-4">1 fotocòpia de la targeta sanitària</span>
+            </li>
+            <li className="py-1">
+              <Link
+                href="/docs/inscripcio_escola.pdf"
+                target="_blank"
+                className="flex hover:underline "
+              >
+                <DocumentDownloadIcon className="h-6 w-6 text-red-500"></DocumentDownloadIcon>
+                <span className="ml-4">Aquest formulari omplert</span>
+              </Link>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      {/* FAQ */}
+      <div className="mx-auto max-w-7xl bg-red-50 py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
+        <h2 className="text-center text-3xl font-bold tracking-tight text-gray-900">
+          Preguntes freqüents
+        </h2>
+        <div className="mt-12">
+          <dl className="space-y-10 md:grid md:grid-cols-2 md:grid-rows-2 md:gap-x-8 md:gap-y-12 md:space-y-0 lg:grid-cols-3">
+            {faqs.map((faq) => (
+              <div key={faq.id} className="space-y-2">
+                <dt className="text-lg font-medium font-bold leading-6 text-gray-900">
+                  {faq.question}
+                </dt>
+                <dd className="text-base text-gray-500">{faq.answer}</dd>
+              </div>
+            ))}
+          </dl>
         </div>
       </div>
     </>
