@@ -7,7 +7,6 @@ export default function RichTextAsset({ id, assets }) {
 
   if (asset?.url) {
     if (asset.contentType === 'application/pdf') {
-      console.log(asset)
       return (
         <>
           <Link href={asset.url} target="_blank">
@@ -19,18 +18,18 @@ export default function RichTextAsset({ id, assets }) {
         </>
       )
     } else {
-      console.log(asset)
       return (
-        <figure>
-          <picture>
-            <source srcSet={asset.url} />
-            <img
+        <div className="flex justify-center">
+          <div className="relative h-96 w-96 ">
+            <Image
               src={asset.url}
               alt={asset.description}
-              className="w-full rounded-lg"
+              className="rounded-lg"
+              layout="fill"
+              priority="1"
             />
-          </picture>
-        </figure>
+          </div>
+        </div>
       )
     }
   }

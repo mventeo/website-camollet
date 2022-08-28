@@ -34,14 +34,51 @@ metadata:contentfulMetadata{
     name
   }
 }
-docs:docsCollection{
+participants:participantCollection{
   items{
     title
-    description
-    contentType
     url
+    file{
+      url
+      contentType
+    }
   }
 }
+participantTextSection
+results:resultCollection{
+  items{
+    title
+    url
+    file{
+      url
+      contentType
+    }
+  }
+}
+resultTextSection
+docTextSection
+docs:docCollection{
+  items{
+    title
+    url
+    file{
+      url
+      contentType
+    }
+  }
+}
+docTextSection
+otherDocs:otherDocCollection{
+  items{
+    title
+    url
+    file{
+      url
+      contentType
+    }
+  }
+}
+otherDocTextSection
 hero
 showInHome
 author{
@@ -52,13 +89,27 @@ author{
 }
 moreInfoText
 moreInfoUrl
-galleryCollection{
+gallery:galleryCollection{
   items{
     title
     type
     link
     author{
       name
+      link
+    }
+  }
+}
+sponsors:sponsorCollection{
+  items{
+    name
+    website
+    organizer
+    sponsor
+    collaborator
+    logo{
+      contentType
+      url
     }
   }
 }
@@ -243,7 +294,7 @@ export async function getRecentPostsForHome(preview) {
     `query {
       postCollection(order: date_DESC, preview: ${
         preview ? 'true' : 'false'
-      }, limit:10, where:{hero:false}) {
+      }, limit:5, where:{hero:false}) {
         items {
           ${POST_GRAPHQL_FIELDS}
         }
@@ -258,6 +309,22 @@ export async function getActiveHeroPost(preview) {
   const entry = await fetchGraphQL(
     `query {
       postCollection(where: { hero: true}, preview: ${
+        preview ? 'true' : 'false'
+      }, limit:1) {
+        items {
+          ${POST_GRAPHQL_FIELDS}
+        }
+      }
+    }`,
+    preview
+  )
+  return extractPost(entry)
+}
+
+export async function getPoster(preview) {
+  const entry = await fetchGraphQL(
+    `query {
+      postCollection(where: { poster: true}, preview: ${
         preview ? 'true' : 'false'
       }, limit:1) {
         items {
@@ -329,17 +396,4 @@ export async function getPostAndMorePosts(slug, preview) {
     post: extractPost(entry),
     morePosts: extractPostEntries(entries),
   }
-}
-
-export async function getClubLegislation() {
-  const query = `query {
-    assetCollection(where:{title:"Normativa del Club"}){
-      items{
-        title
-        url
-      }
-    }
-  }`
-  const entry = await fetchGraphQL(query, false)
-  return entry?.data?.assetCollection?.items?.[0]
 }

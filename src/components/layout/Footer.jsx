@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { HomeContact } from './HomeContact'
 
 /* This example requires Tailwind CSS v2.0+ */
 const navigation = {
@@ -84,37 +85,58 @@ const navigation = {
 
 export function Footer({ legislation }) {
   return (
-    <footer className="bg-gray-100 pt-2" aria-labelledby="footer-heading">
-      <h2 id="footer-heading" className="sr-only">
-        Footer
-      </h2>
-      <div className="mx-auto max-w-7xl py-12 px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1">
-          <div>
-            <div>
-              <picture>
-                <source srcSet="/logos/Logo CAM.png" media="image/png" />
-                <img src="/logos/Logo CAM.png" alt="" />
-              </picture>
-            </div>
-            <p className="text-base font-semibold text-gray-500">
-              Fem atletisme des de 1931
-            </p>
+    <>
+      <HomeContact />
+      <footer className="bg-gray-100 pt-2" aria-labelledby="footer-heading">
+        <h2 id="footer-heading" className="sr-only">
+          Footer
+        </h2>
+        <div className="mx-auto max-w-7xl py-4 px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-2">
+            {/* Logo Club */}
+            <div className="items-start">
+              <div>
+                <picture>
+                  <source srcSet="/logos/Logo CAM.png" media="image/png" />
+                  <img src="/logos/Logo CAM.png" alt="" className="h-48 w-48" />
+                </picture>
+              </div>
+              <p className="text-base font-semibold text-gray-500">
+                Fem atletisme des de 1931
+              </p>
 
-            <div className="flex space-x-6">
-              {navigation.social.map((item) => (
-                <a
-                  key={item.name}
-                  href={item.href}
-                  className="text-gray-400 hover:text-gray-500"
-                >
-                  <span className="sr-only">{item.name}</span>
-                  <item.icon className="h-6 w-6" aria-hidden="true" />
-                </a>
-              ))}
+              <div className="flex space-x-6">
+                {navigation.social.map((item) => (
+                  <a
+                    key={item.name}
+                    href={item.href}
+                    className="text-gray-400 hover:text-gray-500"
+                  >
+                    <span className="sr-only">{item.name}</span>
+                    <item.icon className="h-6 w-6" aria-hidden="true" />
+                  </a>
+                ))}
+              </div>
+            </div>
+            {/* Sponsors */}
+            <div className="relative items-end">
+              <p className="text-center text-base font-semibold text-gray-500">
+                Patrocinador Principal
+              </p>
+              <div className="mt-4 flex justify-center">
+                <picture>
+                  <source srcSet="/logos/cubas-palau.png" media="image/png" />
+                  <img
+                    src="/logos/cubas-palau.png"
+                    alt=""
+                    className="h-24 w-auto"
+                  />
+                </picture>
+              </div>
             </div>
           </div>
-          <div className="grid grid-cols-2 gap-8 pt-12 lg:grid-cols-6 xl:mt-0">
+          <hr className="mt-6" />
+          <div className="grid grid-cols-2 gap-8 pt-6 lg:grid-cols-6 xl:mt-0">
             <div>
               <h3 className="text-base font-medium text-gray-900">Club</h3>
               <ul role="list" className="mt-4 space-y-4">
@@ -198,16 +220,12 @@ export function Footer({ legislation }) {
                   <li key={item.name}>
                     <a
                       href={item.href}
-                      className="text-base text-gray-500 hover:text-gray-900"
+                      className="flex justify-center text-base text-gray-500 hover:text-gray-900"
                       target={item.target}
                     >
                       <picture>
                         <source srcSet={item.img} />
-                        <img
-                          src={item.img}
-                          alt={item.name}
-                          className="justify-center"
-                        />
+                        <img src={item.img} alt={item.name} />
                       </picture>
                     </a>
                   </li>
@@ -235,7 +253,7 @@ export function Footer({ legislation }) {
             &copy; 2022 Club Atlètic Mollet. Tots els drets reservats.
           </p>
         </div>
-      </div>
-    </footer>
+      </footer>
+    </>
   )
 }

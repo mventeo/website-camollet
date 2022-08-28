@@ -24,13 +24,14 @@ const customMarkdownOptions = (content) => ({
 
 export function Hero({ heroPost }) {
   return (
-    <Container>
-      <div className="relative bg-gradient-to-r from-red-200 to-red-50">
-        <main className="lg:relative">
-          <div className="mx-auto w-full max-w-7xl pt-16 pb-20 text-center lg:py-24 lg:text-left">
+    <>
+      <div className="bg-gradient-to-r from-red-200 to-red-50">
+        <div className="relative">
+          <div className="pt-16 pb-20 text-center lg:py-24 lg:text-left">
             <div className="px-4 sm:px-8 lg:w-1/2 xl:pr-16">
               <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl sm:tracking-tight md:text-6xl md:tracking-tight lg:text-5xl lg:tracking-tight xl:text-6xl xl:tracking-tight">
-                <span className="block xl:inline">{heroPost.title}</span><br/>
+                <span className="block xl:inline">{heroPost.title}</span>
+                <br />
                 <span className="block text-2xl text-red-600 xl:inline">
                   {heroPost.subtitle}
                 </span>
@@ -62,7 +63,7 @@ export function Hero({ heroPost }) {
                     <div key={doc.title}>
                       <div className="mt-10 sm:flex sm:justify-center lg:justify-center">
                         <Link
-                          href={doc.url}
+                          href={doc.url ? doc.url : '#'}
                           target="_blank"
                           className="flex w-full items-center justify-center px-4 py-2 text-center text-base font-medium text-red-600 hover:text-red-700 md:py-2 md:px-4 md:text-base"
                         >
@@ -94,8 +95,8 @@ export function Hero({ heroPost }) {
               </picture>
             </div>
           )}
-        </main>
+        </div>
       </div>
-    </Container>
+    </>
   )
 }
