@@ -1,9 +1,9 @@
 import { MailIcon, PhoneIcon, HomeIcon } from '@heroicons/react/outline'
-import { Container } from './Container'
+import { Container } from '@/components/Container'
 
-export default function HomeContact() {
+export function HomeContact() {
   return (
-    <div className="bg-gradient-to-b from-gray-200 to-gray-100">
+    <div className="">
       <div className="mx-auto max-w-7xl py-16 px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-lg md:grid md:max-w-none md:grid-cols-2 md:gap-8">
           <div>

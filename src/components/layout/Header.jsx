@@ -120,8 +120,8 @@ function MobileNavigation() {
 
 export function Header() {
   return (
-    <header className="py-2">
-      <Container>
+    <header className="mt-6">
+      <Container className="bg-white py-2">
         <nav className="relative z-50">
           <div className="xs:grid-cols-3 grid grid-cols-4">
             <div className="xs:col-span-2 col-span-3 flex justify-items-start">

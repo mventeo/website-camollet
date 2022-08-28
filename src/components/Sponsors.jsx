@@ -3,7 +3,7 @@ import { Container } from './Container'
 
 export function Sponsors() {
   return (
-    <Container>
+    <>
       <div className="bg-white py-12 ">
         <p className="text-center font-sans text-xl font-semibold uppercase text-red-400">
           Patrocinador del Club
@@ -25,7 +25,6 @@ export function Sponsors() {
           </div>
         </div>
       </div>
-      <hr />
-    </Container>
+    </>
   )
 }

@@ -16,3 +16,7 @@
 .markdown h3 {
   @apply text-2xl mt-8 mb-4 leading-snug;
 }
+
+.markdown h6 {
+  @apply text-lg mt-8 mb-4 leading-snug text-center font-bold;
+}
