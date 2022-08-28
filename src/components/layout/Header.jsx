@@ -129,7 +129,7 @@ export function Header() {
                 <Logo className="h-16 w-auto" />
               </Link>
               <span className="xs:text-2xl xs:mt-3 text-1xl mt-5 pl-6 font-black uppercase sm:text-3xl">
-                Club Atlètic Mollet
+                Club Atlètic <span className="text-red-500">Mollet</span>
               </span>
             </div>
 
