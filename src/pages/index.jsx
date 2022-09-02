@@ -106,11 +106,11 @@ export default function Index({ preview, posts, heroPost, agenda }) {
                 <p className="mt-4 max-w-3xl pb-10 text-left text-lg text-zinc-600">
                   A l&apos;escola del Club Atlètic Mollet,{' '}
                   <span className="font-bold text-red-500 ">
-                    millor escola esportiva
+                    millor equip de base
                   </span>
-                  de Mollet del Vallès de 2021, els vostres fills es formaran en
-                  la pràctica de l&apos;atletisme amb valors de respecte a
-                  l&apos;esport i els companys. <br />
+                  &nbsp;de Mollet del Vallès de 2021, els vostres fills es
+                  formaran en la pràctica de l&apos;atletisme amb valors de
+                  respecte a l&apos;esport i els companys. <br />
                   <br />A partir dels 6 anys i fins els 14, en horaris de 18:00
                   a 19:30, tots els dilluns, dimarts i divendres.
                   <br />

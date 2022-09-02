@@ -152,36 +152,6 @@ const GROUP_GRAPHQL_FIELDS = `
 name
 id
 description
-information
-schedule {
-  json 
-}
-coachesIntroduction
-coaches: coachesCollection {
-  items {
-    name
-    picture {
-      url
-    }
-    role: speciality
-    quote
-  }
-}
-categories: categoriesCollection {
-  items {
-    name
-  }
-}
-groups: eventsGroupsCollection {
-  items {
-    name
-    events: eventsCollection {
-      items {
-        name
-      }
-    }
-  }
-}
 `
 
 async function fetchGraphQL(query, preview = false) {
@@ -275,7 +245,20 @@ export async function getGroupWithName(name) {
   return extractGroup(entry)
 }
 
-export async function getGroupWithId(id) {
+export async function getAllTrainingGroups() {
+  const entries = await fetchGraphQL(
+    `query {
+      trainingGroupCollection() {
+        items {
+          ${GROUP_GRAPHQL_FIELDS}
+        }
+      }
+    }`
+  )
+  return extractGroupEntries(entries)
+}
+
+export async function getTrainingGroup(id) {
   console.log(id)
   const entry = await fetchGraphQL(
     `query {
