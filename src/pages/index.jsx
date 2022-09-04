@@ -129,11 +129,11 @@ export default function Index({ preview, posts, heroPost, agenda }) {
               <div className="border-gray-50 pt-6 shadow-lg">
                 <picture>
                   <source
-                    srcSet="/images/nit_esport_2021.png"
+                    srcSet="/images/equip_base_nit_esport_2022.png"
                     media="image/png"
                   />
                   <img
-                    src="/images/nit_esport_2021.png"
+                    src="/images/equip_base_nit_esport_2022.png"
                     alt=""
                     className=" w-auto"
                   />

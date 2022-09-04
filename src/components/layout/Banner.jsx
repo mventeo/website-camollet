@@ -5,8 +5,14 @@ import {
   BellIcon,
 } from '@heroicons/react/outline'
 
+import { Container } from '../Container'
+import { Header } from './Header'
+
 export function Banner() {
   return (
+    <>
+    <Header></Header>
+    <Container>
     <div className="bg-red-600">
       <div className="mx-auto max-w-7xl py-3 px-3 sm:px-6 lg:px-8">
         <div className="flex flex-wrap items-center justify-between">
@@ -44,5 +50,7 @@ export function Banner() {
         </div>
       </div>
     </div>
+    </Container>
+    </>
   )
 }
