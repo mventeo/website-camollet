@@ -54,10 +54,15 @@ export function RecentPosts({ posts }) {
                       {post.excerpt}
                     </p>
                     <div className="text-sm font-medium">
-                      <div className="mt-3 hover:underline">
-                        <span className="rounded-lg bg-blue-200 py-1 px-2">
-                          Article
-                        </span>
+                      <div className="mt-2">
+                        {post.metadata.tags.map((tag) => (
+                          <span
+                            key={tag.name}
+                            className="mr-2 rounded bg-blue-400 px-2 py-1 text-sm text-white md:text-base"
+                          >
+                            {tag.name}
+                          </span>
+                        ))}
                       </div>
                     </div>
                   </div>
