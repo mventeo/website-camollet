@@ -5,22 +5,16 @@ import { Header } from '@/components/layout/Header'
 import { getAllPostsWithSlug, getPostAndMorePosts, getPoster } from '@/lib/api'
 import { ContentPost } from '@/components/Post'
 import { Footer } from '@/components/layout/Footer'
+import NotFound from '../404'
 
 export default function Post({ post, morePosts, preview, poster }) {
   const router = useRouter()
 
   if (!router.isFallback && !post) {
-    return <ErrorPage statusCode={404} />
+    return <NotFound />
   }
 
-  return (
-    <>
-      <Header />
-
-      {post && <ContentPost post={post} poster={poster} />}
-      <Footer />
-    </>
-  )
+  return <>{post && <ContentPost post={post} poster={poster} />}</>
 }
 
 export async function getStaticProps({ params, preview = false }) {
@@ -32,6 +26,7 @@ export async function getStaticProps({ params, preview = false }) {
       post: data?.post ?? null,
       morePosts: data?.morePosts ?? null,
       poster: poster ?? null,
+      revalidate: 1,
     },
   }
 }
@@ -40,7 +35,7 @@ export async function getStaticPaths() {
   const allPosts = await getAllPostsWithSlug()
 
   return {
-    paths: allPosts?.map(({ slug }) => `/posts/${slug}`) ?? [],
+    paths: allPosts?.map(({ slug }) => `/publicacions/${slug}`) ?? [],
     fallback: true,
   }
 }

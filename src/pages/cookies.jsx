@@ -45,7 +45,7 @@ export default function LegalPage({ page }) {
 }
 
 export async function getStaticProps({ preview = false }) {
-  const page = (await getStaticPage('avis-legal', preview)) ?? []
+  const page = (await getStaticPage('cookies', preview)) ?? []
   console.log(page)
   return {
     props: { preview, page },

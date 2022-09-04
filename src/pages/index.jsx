@@ -42,13 +42,13 @@ export default function Index({ preview, posts, heroPost, agenda }) {
     <>
       {/* <Banner /> */}
       <Head>
-        <title>Club Atlètic Mollet</title>
+        <title>{CMS_NAME} - Fem atletisme des de 1931</title>
         <meta
           name="description"
           content="Club Atlètic Mollet. Fem atletisme des de 1931"
         />
       </Head>
-      <Header />
+
       <Container id="main" className="bg-white">
         <Hero heroPost={heroPost} />
         <Sponsors />
@@ -89,7 +89,10 @@ export default function Index({ preview, posts, heroPost, agenda }) {
               </dl>
             </div>
             <div className="pt-8 text-center">
-              <Button className="bg-red-500  hover:bg-red-600" href="/escola">
+              <Button
+                className="bg-red-500  hover:bg-red-600"
+                href="/properament"
+              >
                 Vull més informació
               </Button>
             </div>
@@ -120,7 +123,7 @@ export default function Index({ preview, posts, heroPost, agenda }) {
                 <div className="text-center">
                   <Button
                     className="bg-red-500  hover:bg-red-600"
-                    href="/escola"
+                    href="/escola/inscripcio"
                   >
                     Vull més informació
                   </Button>
@@ -142,9 +145,8 @@ export default function Index({ preview, posts, heroPost, agenda }) {
             </div>
           </div>
         </div>
+        {/* <Footer showContact="false" /> */}
       </Container>
-
-      <Footer />
     </>
   )
 }

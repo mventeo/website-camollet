@@ -1,3 +1,5 @@
+import { Header } from '@/components/layout/Header'
+import { Footer } from '@/components/layout/Footer'
 import { Head, Html, Main, NextScript } from 'next/document'
 
 export default function Document(props) {
@@ -21,8 +23,9 @@ export default function Document(props) {
         />
       </Head>
       <body className="flex h-full flex-col">
+        <Header></Header>
         <Main />
-
+        <Footer />
         <NextScript />
       </body>
     </Html>

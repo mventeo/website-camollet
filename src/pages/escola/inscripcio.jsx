@@ -152,7 +152,6 @@ export default function Escola() {
       <Head>
         <title>{PAGE_TITLE}</title>
       </Head>
-      <Header />
       <div>
         <div className="mx-auto max-w-7xl bg-white py-8 px-4 sm:px-6 lg:px-8">
           <div className="sm:align-center bg-red-500 sm:flex sm:flex-col">
@@ -273,7 +272,6 @@ export default function Escola() {
           </dl>
         </div>
       </div>
-      <Footer />
     </>
   )
 }
