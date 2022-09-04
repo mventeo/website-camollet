@@ -115,7 +115,7 @@ export default function Index({ preview, posts, heroPost, agenda }) {
                   formaran en la pràctica de l&apos;atletisme amb valors de
                   respecte a l&apos;esport i els companys. <br />
                   <br />A partir dels 6 anys i fins els 14, en horaris de 18:00
-                  a 19:30, tots els dilluns, dimarts i divendres.
+                  a 19:30, tots els dilluns, dimecres i divendres.
                   <br />
                   Podeu triar entre 1 dia a la setmana, o 2-3 dies, i les
                   families amb germans tenen descompte.
