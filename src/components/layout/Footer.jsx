@@ -8,7 +8,7 @@ const navigation = {
     // { name: 'Marketing', href: '#' },
   ],
   escola: [
-    { name: 'tecnificacio', href: '/properament' },
+    { name: 'Grups', href: '/properament' },
     { name: 'Inscripcions', href: '/escola/inscripcio' },
     { name: 'Calendari Escola', href: '/properament' },
     // { name: 'Documentation', href: '#' },
