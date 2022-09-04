@@ -16,12 +16,10 @@ export default function Calendar() {
       <Head>
         <title>{PAGE_TITLE}</title>
       </Head>
-      <Header />
       <Container className="bg-white">
         <MainTitleDesc title={MAIN_TITLE} />
         <GymCalendar />
       </Container>
-      <Footer showContact="false" className />
     </>
   )
 }

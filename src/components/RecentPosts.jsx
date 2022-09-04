@@ -45,7 +45,7 @@ export function RecentPosts({ posts }) {
                 <div className="flex flex-1 flex-col justify-between bg-white lg:px-6">
                   <div className="flex-1">
                     <Link
-                      href={`/posts/${post.slug}`}
+                      href={`/publicacions/${post.slug}`}
                       className="font-sans text-lg font-bold hover:underline"
                     >
                       {post.title}

@@ -8,27 +8,49 @@ const navigation = {
     // { name: 'Marketing', href: '#' },
   ],
   escola: [
-    { name: 'Calendari Escola', href: '/calendar' },
+    { name: 'tecnificacio', href: '/properament' },
+    { name: 'Inscripcions', href: '/escola/inscripcio' },
+    { name: 'Calendari Escola', href: '/properament' },
     // { name: 'Documentation', href: '#' },
     // { name: 'Guides', href: '#' },
     // { name: 'API Status', href: '#' },
   ],
-  grups: [
-    // { name: 'About', href: '#' },
-    // { name: 'Blog', href: '#' },
-    // { name: 'Jobs', href: '#' },
-    // { name: 'Press', href: '#' },
-    // { name: 'Partners', href: '#' },
+  manteniment: [
+    { name: 'manteniment1', href: '/preparement' },
+    { name: 'manteniment2', href: '/preparement' },
+  ],
+  tecnificacio: [
+    { name: 'Velocitat i salts', href: '/tecnificacio/velocitat' },
+    { name: 'Fons i mig fons', href: '/tecnificacio/fons' },
+    { name: 'Llençaments', href: '/tecnificacio/llençaments' },
+    { name: 'Veterans', href: '/tecnificacio/veterans' },
   ],
   competicions: [
-    // { name: 'Claim', href: '#' },
+    {
+      name: 'Cursa Sant Vicenç',
+      href: 'publicacions/cursa-de-sant-vicenc-2022',
+    },
+    { name: 'Míting Ciutat de Mollet', href: '/properament' },
+    { name: 'Cross Escolar de Mollet', href: '/properament' },
+    {
+      name: '58é Campionats del Vallès',
+      href: 'publicacions/58e-campionats-del-valles',
+    },
   ],
   legal: [
     { name: 'Avís Legal', href: '/legal' },
+    { name: 'Política de cookies', href: '/cookies' },
+    { name: 'Política de privacitat i xarxes socials', href: '/privacitat' },
     // { name: 'Privacy', href: '#' },
     // { name: 'Terms', href: '#' },
   ],
   links: [
+    {
+      name: 'Ajuntament de Mollet del Vallès',
+      href: 'https://molletvalles.cat/',
+      target: '_blank',
+      img: '/logos/Logo_AjP.png',
+    },
     {
       name: "Federació Catalana d'Atletisme",
       href: 'https://fcatletisme.cat/',
@@ -178,10 +200,10 @@ export function Footer({ showContact = true }) {
             </div>
             <div>
               <h3 className="text-base font-medium text-gray-900">
-                Tecnificació
+                Manteniment
               </h3>
               <ul role="list" className="mt-4 space-y-4">
-                {navigation.grups.map((item) => (
+                {navigation.manteniment.map((item) => (
                   <li key={item.name}>
                     <a
                       href={item.href}
@@ -193,7 +215,24 @@ export function Footer({ showContact = true }) {
                 ))}
               </ul>
             </div>
-            <div className="md:grid md:grid-cols-3 md:gap-8">
+            <div>
+              <h3 className="text-base font-medium text-gray-900">
+                Tecnificació
+              </h3>
+              <ul role="list" className="mt-4 space-y-4">
+                {navigation.tecnificacio.map((item) => (
+                  <li key={item.name}>
+                    <a
+                      href={item.href}
+                      className="text-base text-gray-500 hover:text-gray-900"
+                    >
+                      {item.name}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="">
               <h3 className="text-base font-medium text-gray-900">
                 Competicions
               </h3>
@@ -211,45 +250,41 @@ export function Footer({ showContact = true }) {
               </ul>
             </div>
             <div className="mt-12 md:mt-0">
-              <h3 className="justify-center text-base font-medium text-gray-900">
-                Enllaços
-              </h3>
-              <ul role="list" className="mt-1 text-center">
+              <h3 className="text-base font-medium text-gray-900">Enllaços</h3>
+              <ul role="list" className="mt-1">
                 {navigation.links.map((item) => (
                   <li key={item.name}>
-                    <a
+                    <Link
                       href={item.href}
-                      className="flex justify-center text-base text-gray-500 hover:text-gray-900"
+                      className="flex text-base text-gray-500 hover:text-gray-900"
                       target={item.target}
                     >
                       <picture>
                         <source srcSet={item.img} />
                         <img src={item.img} alt={item.name} />
                       </picture>
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="mt-12 md:mt-0">
-              <h3 className="text-base font-medium text-gray-900">Legal</h3>
-              <ul role="list" className="mt-4 space-y-4">
-                {navigation.legal.map((item) => (
-                  <li key={item.name}>
-                    <Link
-                      href={item.href}
-                      className="text-base text-gray-500 hover:text-gray-900"
-                    />
-                    {item.name}
+                    </Link>
                   </li>
                 ))}
               </ul>
             </div>
           </div>
         </div>
-        <div className="mt-12 border-t border-gray-200 pt-8">
-          <p className="text-base text-gray-400 xl:text-center">
+        <div className="mt-12 grid grid-cols-2 border-t border-gray-200 pt-2">
+          <p className="ml-8 text-base text-gray-400 xl:text-center">
             &copy; 2022 Club Atlètic Mollet. Tots els drets reservats.
+          </p>
+          <p className="mr-8 flex justify-end text-base text-gray-400 xl:text-left">
+            {navigation.legal.map((item, idx) => (
+              <span key={item.name}>
+                <Link
+                  href={item.href}
+                  className="mr-4 text-sm text-gray-500 hover:text-gray-900"
+                >
+                  {item.name}
+                </Link>
+              </span>
+            ))}
           </p>
         </div>
       </footer>
