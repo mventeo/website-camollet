@@ -155,5 +155,6 @@ export async function getStaticProps({ preview = false }) {
   const agenda = (await getNextAgenda()) ?? []
   return {
     props: { preview, posts, heroPost, agenda },
+    revalidate: 10,
   }
 }
