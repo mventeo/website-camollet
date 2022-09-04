@@ -7,7 +7,6 @@ import { Button } from './Button'
 import { Container } from './Container'
 
 export function RecentPosts({ posts }) {
-  console.log(posts)
   return (
     <>
       {/* <div className="px-4 pt-16 pb-20 sm:px-6 lg:px-8 lg:pt-16 lg:pb-16"> */}

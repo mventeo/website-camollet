@@ -15,7 +15,7 @@ const links = [
   },
   {
     name: 'Escola',
-    href: '/escola',
+    href: '/escola/inscripcio',
   },
   {
     name: 'Cursa de Sant Vicenç',

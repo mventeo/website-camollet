@@ -19,9 +19,9 @@ export default function Tecnificacio({ preview, group }) {
         <div className="px-0 sm:px-4 lg:flex lg:items-center lg:justify-between lg:px-0">
           <div className="max-w-xl">
             <h2 className="text-4xl font-bold tracking-tight text-white sm:text-5xl sm:tracking-tight lg:text-6xl lg:tracking-tight">
-              {group.name}
+              {/* {group.name} */}
             </h2>
-            <p className="mt-5 text-xl text-indigo-300">{group.description}</p>
+            {/* <p className="mt-5 text-xl text-indigo-300">{group.description}</p> */}
           </div>
         </div>
       </div>

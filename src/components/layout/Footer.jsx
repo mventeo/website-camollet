@@ -4,6 +4,7 @@ import { HomeContact } from './HomeContact'
 /* This example requires Tailwind CSS v2.0+ */
 const navigation = {
   club: [
+    { name: 'Gimnàs', href: '/club/gimnas' },
     // { name: 'Marketing', href: '#' },
   ],
   escola: [
@@ -83,10 +84,10 @@ const navigation = {
   ],
 }
 
-export function Footer({ legislation }) {
+export function Footer({ showContact = true }) {
   return (
     <>
-      <HomeContact />
+      {showContact == true && <HomeContact />}
       <footer className="bg-gray-100 pt-2" aria-labelledby="footer-heading">
         <h2 id="footer-heading" className="sr-only">
           Footer
@@ -150,16 +151,14 @@ export function Footer({ legislation }) {
                     </a>
                   </li>
                 ))}
-                {legislation && (
-                  <li>
-                    <Link
-                      href="https://assets.ctfassets.net/8rp1uuyxnm8g/7lShD021W2i2vZm9bWRg0r/7246dcdd2220bcb7a4f38a882e5305a7/Regalment_regim_intern_CAMollet.pdf"
-                      target="_blanck"
-                    >
-                      Reglament Intern
-                    </Link>
-                  </li>
-                )}
+                <li>
+                  <Link
+                    href="https://assets.ctfassets.net/8rp1uuyxnm8g/7lShD021W2i2vZm9bWRg0r/7246dcdd2220bcb7a4f38a882e5305a7/Regalment_regim_intern_CAMollet.pdf"
+                    target="_blank"
+                  >
+                    Reglament Intern
+                  </Link>
+                </li>
               </ul>
             </div>
             <div className="mt-12 md:mt-0">
