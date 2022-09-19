@@ -45,15 +45,17 @@ function DocLink({ item }) {
   return (
     <Link
       href={item.url ? item.url : item.file?.url ? item.file.url : '#'}
-      className="ml-2 flex hover:underline"
+      className=" ml-2 flex text-red-500 hover:text-red-700  hover:underline"
       target="_blank"
     >
       {item.url ? (
-        <LinkIcon className="h-6" />
+        <LinkIcon className=" h-6" />
       ) : (
-        <DocumentIcon className="h-6" />
+        <DocumentIcon className=" h-6" />
       )}
-      <span className="ml-2 text-sm">{item.title}</span>
+      <span className="ml-2 text-sm font-bold">
+        {item.shortTitle ? item.shortTitle : item.title}
+      </span>
     </Link>
   )
 }
@@ -111,7 +113,7 @@ export function ContentPost({ post, poster }) {
     <div className="bg-gray-100">
       <Container className="bg-white pb-16">
         <div className="bg-gradient-to-b from-red-600 to-red-100 p-2 pb-24">
-          <div className="text-2xl font-bold text-stone-900 md:text-3xl">
+          <div className="text-2xl font-bold text-white md:text-3xl">
             {post.title}
           </div>
           {post.subtitle ? (
@@ -204,7 +206,7 @@ export function ContentPost({ post, poster }) {
                 title={
                   post.participantTextSection
                     ? post.participantTextSection
-                    : 'Inscripts'
+                    : 'Inscrits'
                 }
               >
                 <ul className="mt-2 pt-2">
@@ -271,7 +273,17 @@ export function ContentPost({ post, poster }) {
               <div className="mb-2 hidden  justify-center border-stone-100 md:flex">
                 <div className="flex">
                   <div className="relative h-96 w-80 shadow-lg">
-                    <Image src={poster.coverImage.url} layout="fill" alt="" />
+                    <Link href={poster.moreInfoUrl ? poster.moreInfoUrl : '#'}>
+                      <Image
+                        src={
+                          poster.posterImage
+                            ? poster.posterImage.url
+                            : poster.coverImage.url
+                        }
+                        layout="fill"
+                        alt=""
+                      />
+                    </Link>
                   </div>
                 </div>
               </div>

@@ -1,0 +1,128 @@
+export const POST_GRAPHQL_FIELDS = `
+slug
+date
+title
+subtitle
+excerpt
+content {
+  json
+  links{
+    assets{
+      block{
+        sys{
+          id
+        }
+        url
+        description
+        contentType
+      }
+    }
+  }
+}
+coverImage{
+  url
+  contentfulMetadata{
+    tags{
+      name
+    }
+  }
+}
+posterImage{
+    url
+    contentfulMetadata{
+      tags{
+        name
+      }
+    }
+  }
+coverImageAuthor
+coverImageAuthorUrl
+metadata:contentfulMetadata{
+  tags{
+    name
+  }
+}
+participants:participantCollection{
+  items{
+    title
+    shortTitle
+    url
+    file{
+      url
+      contentType
+    }
+  }
+}
+participantTextSection
+results:resultCollection{
+  items{
+    title
+    shortTitle
+    url
+    file{
+      url
+      contentType
+    }
+  }
+}
+resultTextSection
+docTextSection
+docs:docCollection{
+  items{
+    title
+    shortTitle
+    url
+    file{
+      url
+      contentType
+    }
+  }
+}
+docTextSection
+otherDocs:otherDocCollection{
+  items{
+    title
+    shortTitle
+    url
+    file{
+      url
+      contentType
+    }
+  }
+}
+otherDocTextSection
+hero
+showInHome
+author{
+  name
+  picture{
+    url
+  }
+}
+moreInfoText
+moreInfoUrl
+gallery:galleryCollection{
+  items{
+    title
+    type
+    link
+    author{
+      name
+      link
+    }
+  }
+}
+sponsors:sponsorCollection{
+  items{
+    name
+    website
+    organizer
+    sponsor
+    collaborator
+    logo{
+      contentType
+      url
+    }
+  }
+}
+`

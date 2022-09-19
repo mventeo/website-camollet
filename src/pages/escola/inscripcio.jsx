@@ -1,3 +1,8 @@
+import { Footer } from '@/components/layout/Footer'
+import { Header } from '@/components/layout/Header'
+import Head from 'next/head'
+import { CMS_NAME } from '@/lib/constants'
+
 /* This example requires Tailwind CSS v2.0+ */
 import { CheckIcon, DocumentDownloadIcon } from '@heroicons/react/solid'
 import Link from 'next/link'
@@ -58,7 +63,21 @@ const tiers = [
   },
 ]
 
+const categories = [
+  { id: 1, name: 'Pre-Benjamí', years: '2017-2016' },
+  { id: 2, name: 'Benjamí', years: '2015-2014' },
+  { id: 3, name: 'Aleví', years: '2013-2012' },
+  { id: 4, name: 'Infantil', years: '2011-2010' },
+]
+
 const faqs = [
+  {
+    id: 12,
+    question:
+      "A partir de quines edats puc inscriure el meu fill/a a l'Escola?",
+    answer:
+      'És poden apuntar tot els nen/es nascuts entre els anys 2017 i 2010',
+  },
   {
     id: 1,
     question: 'Podem probar abans de fer la inscripció?',
@@ -66,29 +85,12 @@ const faqs = [
       "Si, el club permet la proba 1 dia sense carrec i donar l'oportunitat de coneixer el grup i els companys.",
   },
   {
-    id: 2,
-    question: 'Que pasa si un rebut es rebutjat?',
-    answer:
-      'En cas de devolució del rebut, el club carregarà 5€ sobre la reemissió, per les despeses bancàries ocasionades',
-  },
-  {
     id: 3,
     question: 'Que pasa si un rebut es impagat?',
     answer:
       "En cas d'impagament, la junta es reservarà la decisió de no permetre participar en les competicions ni entrenar al atleta",
   },
-  {
-    id: 4,
-    question: 'Puc fraccionar el pagament en més quotes?',
-    answer:
-      "Com a màxim s'admetrà el pagament en 3 terminis (no s'acceptaran fraccionaments de 4 o més), i sempre pagat el 100% abans d'acabar l'any. Les excepcions seran mínimies i hauran de ser parlades amb la junta",
-  },
-  {
-    id: 5,
-    question: 'I si marxo abans de Juny?',
-    answer:
-      "Heu de pensar que tot atleta té associades despeses federatives i d'entrenadors. Un cop signada ...",
-  },
+
   {
     id: 6,
     question: "Tinc descompte si s'apunten germans",
@@ -112,21 +114,52 @@ const faqs = [
     answer:
       "No cal anar uniformats als entrenaments per tant podeu portar la vostra roba esportiva. Només a les competicions cal competir amb la roba del club, però amb l'inscripcio ve inclòs la samarreta i pantalò o calçetes.",
   },
+  {
+    id: 2,
+    question: 'Que pasa si un rebut es rebutjat?',
+    answer:
+      'En cas de devolució del rebut, el club carregarà 5€ sobre la reemissió, per les despeses bancàries ocasionades',
+  },
+  {
+    id: 4,
+    question: 'Puc fraccionar el pagament en més quotes?',
+    answer:
+      "Com a màxim s'admetrà el pagament en 3 terminis (no s'acceptaran fraccionaments de 4 o més), i sempre pagat el 100% abans d'acabar l'any. Les excepcions seran mínimies i hauran de ser parlades amb la junta",
+  },
+  {
+    id: 5,
+    question: 'I si marxo abans de Juny?',
+    answer:
+      "Heu de pensar que tot atleta té associades despeses federatives i d'entrenadors. Un cop signada ...",
+  },
 ]
 
-export default function SchoolPrices() {
+const PAGE_TITLE = CMS_NAME + " - Apunta't a l'Escola d'Atletisme"
+const MAIN_TITLE = "Preus de l'Escola d'Atletisme 2022/2023"
+const MAIN_DESC = `Tots els dilluns, dimecres i divendres de 18:00 a 19:30. Opcions
+de 1 o 2-3 dies a la setmana. Preu reduit a partir del segón germà
+només amb la opció de 2-3 dies setmana.`
+const PAYMENT_INFO = 'Informació sobre els pagaments'
+const DOC_TITLE = 'Documentació necessaria per formalitzar la inscripció'
+const DOC_DESC =
+  "L'inscripció és podrá fer tots els dilluns, dimecres i divendres a la secretaria del club en horari de 18:00 a 19:30. Per formalitzar la inscripció cal portar els documents i omplir el formulari que indiquem a continuació."
+const DOC_IMPORTANT =
+  "El primer pagament s'ha de fer en metàlic al moment de l'incscripció e inclou un pagament adiccional de 12€ corresponent a l'assegurança obligatoria de la Federació Catalana d'Atletisme. És pot pagar amb targeta de crèdit o dèbit."
+
+export default function Escola() {
   return (
     <>
+      <Head>
+        <title>{PAGE_TITLE}</title>
+      </Head>
       <div>
         <div className="mx-auto max-w-7xl bg-white py-8 px-4 sm:px-6 lg:px-8">
           <div className="sm:align-center bg-red-500 sm:flex sm:flex-col">
-            <h1 className="text-center text-2xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">
-              Preus de l&lsquo;Escola d&lsquo;atletisme 2022/2023
+            <h1 className="p-2 text-center text-2xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">
+              {MAIN_TITLE}
             </h1>
             <p className="mt-5 text-base text-white sm:text-center md:text-xl">
-              Tots els dilluns, dimecres i divendres de 18:00 a 19:30. Opcions
-              de 1 o 2-3 dies a la setmana. Preu reduit a partir del segón germà
-              només amb la opció de 2-3 dies setmana.
+              {MAIN_DESC}
             </p>
           </div>
           <div className="mt-12 space-y-4 sm:mt-16 sm:grid sm:grid-cols-2 sm:gap-6 sm:space-y-0 lg:mx-auto lg:max-w-4xl xl:mx-0 xl:max-w-none xl:grid-cols-2">
@@ -153,7 +186,7 @@ export default function SchoolPrices() {
                 </div>
                 <div className="px-6 pt-6 pb-8">
                   <h3 className="text-sm font-medium font-bold text-gray-900">
-                    Informació dels pagaments
+                    {PAYMENT_INFO}
                   </h3>
                   <ul role="list" className="mt-6 space-y-4">
                     {tier.paymentsInfo.map((feature) => (
@@ -163,7 +196,7 @@ export default function SchoolPrices() {
                         aria-hidden="true"
                       /> */}
                         <span className="text-sm font-bold text-gray-500">
-                          - {feature.period}:{' '}
+                          {feature.period}:
                         </span>
                         <span className="text-sm text-gray-500">
                           {feature.desc}
@@ -182,8 +215,9 @@ export default function SchoolPrices() {
       </div>
       <div className="mx-auto max-w-7xl bg-white  px-4  sm:px-6 lg:px-8">
         <h2 className="pb-6 text-center text-3xl font-bold tracking-tight text-zinc-700">
-          Documentació necessaria per formalitzar la inscripció
+          {DOC_TITLE}
         </h2>
+        <p>{DOC_DESC}</p>
         <div className="flex justify-center pb-8">
           <ul className="list-item">
             <li className="flex py-1">
@@ -214,10 +248,14 @@ export default function SchoolPrices() {
             </li>
           </ul>
         </div>
+        <p className="pb-8 text-sm">
+          <strong className="uppercase">Informació important: </strong>
+          <span className="text-sm">{DOC_IMPORTANT}</span>
+        </p>
       </div>
 
       {/* FAQ */}
-      <div className="mx-auto max-w-7xl bg-red-50 py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
+      <div className="l mx-auto max-w-7xl bg-red-50 py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
         <h2 className="text-center text-3xl font-bold tracking-tight text-gray-900">
           Preguntes freqüents
         </h2>

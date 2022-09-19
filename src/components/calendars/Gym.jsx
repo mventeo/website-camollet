@@ -206,13 +206,13 @@ const groups = [
   },
 ]
 
-export default function GymCalendar() {
+export function GymCalendar() {
   const container = useRef(null)
   const containerNav = useRef(null)
   const containerOffset = useRef(null)
 
   return (
-    <div className="flex h-full flex-col">
+    <div className="bg-white py-8">
       <div
         ref={container}
         className="flex flex-auto flex-col overflow-auto bg-white"
@@ -285,7 +285,7 @@ export default function GymCalendar() {
                 className="col-start-1 col-end-2 row-start-1 grid divide-y divide-gray-100"
                 style={{ gridTemplateRows: 'repeat(48, minmax(3.5rem, 1fr))' }}
               >
-                <div ref={containerOffset} className="row-end-1 h-7"></div>
+                <div ref={containerOffset} className="row-end-1 h-5"></div>
                 <div>
                   <div className="sticky left-0 z-20 -mt-2.5 -ml-14 w-14 pr-2 text-right text-xs leading-5 text-gray-400">
                     09:00
@@ -421,124 +421,6 @@ export default function GymCalendar() {
                     </span>
                   </li>
                 ))}
-                {/* <li
-                  className="relative mt-px flex sm:col-span-5 sm:col-start-1"
-                  
-                >
-                  
-                </li>
-                <li
-                  className="relative mt-px flex sm:col-span-5 sm:col-start-1"
-                  style={{ gridRow: '74 / span 36' }}
-                >
-                  <a
-                    href="#"
-                    className="group absolute inset-1 flex flex-col overflow-y-auto rounded-lg bg-yellow-50 p-2 text-xs leading-5 hover:bg-yellow-100"
-                  >
-                    <p className="order-1 font-semibold text-yellow-700">
-                      Socis Club
-                    </p>
-                    <p className="text-yellow-500 group-hover:text-yellow-700">
-                      <time dateTime="2022-01-12T06:00">15:00 - 18:00</time>
-                    </p>
-                  </a>
-                </li>
-                <li
-                  className="relative mt-px flex sm:col-start-1"
-                  style={{ gridRow: '110 / span 14' }}
-                >
-                  <a
-                    href="#"
-                    className="group absolute inset-1 flex flex-col overflow-y-auto rounded-lg bg-indigo-50 p-2 text-xs leading-5 hover:bg-indigo-100"
-                  >
-                    <p className="order-1 font-semibold text-indigo-700">
-                      Grup de Velocitat i Salts
-                    </p>
-                    <p className="text-indigo-500 group-hover:text-indigo-700">
-                      <time dateTime="2022-01-12T07:30">18:00 - 19:15</time>
-                    </p>
-                  </a>
-                </li>
-                <li
-                  className="relative mt-px flex sm:col-start-1"
-                  style={{ gridRow: '124 / span 10' }}
-                >
-                  <a
-                    href="#"
-                    className="group absolute inset-1 flex flex-col overflow-y-auto rounded-lg bg-pink-50 p-2 text-xs leading-5 hover:bg-pink-100"
-                  >
-                    <p className="order-1 font-semibold text-pink-700">
-                      Grup de Llançaments
-                    </p>
-                    <p className="text-pink-500 group-hover:text-pink-700">
-                      <time dateTime="2022-01-12T07:30">19:15 - 20:00</time>
-                    </p>
-                  </a>
-                </li>
-                <li
-                  className="relative mt-px flex sm:col-start-2"
-                  style={{ gridRow: '110 / span 12' }}
-                >
-                  <a
-                    href="#"
-                    className="group absolute inset-1 flex flex-col overflow-y-auto rounded-lg bg-indigo-50 p-2 text-xs leading-5 hover:bg-indigo-100"
-                  >
-                    <p className="order-1 font-semibold text-indigo-700">
-                      Grup Fons i Mig Fons
-                    </p>
-                    <p className="text-indigo-500 group-hover:text-indigo-700">
-                      <time dateTime="2022-01-12T07:30">18:30 - 19:30</time>
-                    </p>
-                  </a>
-                </li>
-                <li
-                  className="relative mt-px flex sm:col-start-2"
-                  style={{ gridRow: '122 / span 15' }}
-                >
-                  <a
-                    href="#"
-                    className="group absolute inset-1 flex flex-col overflow-y-auto rounded-lg bg-indigo-50 p-2 text-xs leading-5 hover:bg-indigo-100"
-                  >
-                    <p className="order-1 font-semibold text-indigo-700">
-                      Grup cadets
-                    </p>
-                    <p className="text-indigo-500 group-hover:text-indigo-700">
-                      <time dateTime="2022-01-12T07:30">19:30 - 20:15</time>
-                    </p>
-                  </a>
-                </li>
-                <li
-                  className="relative mt-px flex sm:col-start-4"
-                  style={{ gridRow: '110 / span 12' }}
-                >
-                  <a
-                    href="#"
-                    className="group absolute inset-1 flex flex-col overflow-y-auto rounded-lg bg-indigo-50 p-2 text-xs leading-5 hover:bg-indigo-100"
-                  >
-                    <p className="order-1 font-semibold text-indigo-700">
-                      Grup Fons i Mig Fons
-                    </p>
-                    <p className="text-indigo-500 group-hover:text-indigo-700">
-                      <time dateTime="2022-01-12T07:30">18:30 - 19:30</time>
-                    </p>
-                  </a>
-                </li>
-                <li
-                  className="relative mt-px flex sm:col-start-5"
-                  style={{ gridRow: '122 / span 15' }}
-                >
-                  <a
-                    href="#"
-                    className="group absolute inset-1 flex flex-col overflow-y-auto rounded-lg bg-indigo-50 p-2 text-xs leading-5 hover:bg-indigo-100"
-                  >
-                    <p className="order-1 font-semibold text-indigo-700">
-                      Grup cadets
-                    </p>
-                    <p className="text-indigo-500 group-hover:text-indigo-700">
-                      <time dateTime="2022-01-12T07:30">19:30 - 20:15</time>
-                    </p>
-                  </a>
-                </li> */}
               </ol>
             </div>
           </div>

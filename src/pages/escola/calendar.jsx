@@ -1,5 +1,5 @@
 import { Header } from '@/components/layout/Header'
-import { CalendarGroup } from '@/components/Calendar'
+import { SchoolCalendar } from '@/components/calendars/School'
 import { Container } from '@/components/Container'
 
 export default function Calendar() {
@@ -7,7 +7,7 @@ export default function Calendar() {
     <>
       <Header />
       <Container>
-        <CalendarGroup />
+        <SchoolCalendar />
       </Container>
     </>
   )

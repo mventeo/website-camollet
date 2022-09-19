@@ -1,5 +1,5 @@
 import { Container } from './Container'
-
+import Link from 'next/link'
 import { format } from 'date-fns'
 import { ca } from 'date-fns/locale'
 
@@ -17,27 +17,29 @@ export function NextAgenda({ agenda }) {
             <div className="" key={ev.slug}>
               <div className="mt-1 flex text-base font-bold">{ev.title}</div>
               <div className="flex justify-center">
-                <div
-                  className={
-                    ev.metadata.tags.length > 0
-                      ? ev.metadata.tags[0]?.name === 'Escola'
-                        ? 'max-w-lg rounded-md bg-red-400 py-2 px-8 text-white'
+                <Link href={'/agenda/' + ev.slug}>
+                  <div
+                    className={
+                      ev.metadata.tags.length > 0
+                        ? ev.metadata.tags[0]?.name === 'Escola'
+                          ? 'max-w-lg rounded-md bg-red-400 py-2 px-8 text-white'
+                          : 'max-w-lg rounded-md bg-red-500 py-2 px-8 text-white'
                         : 'max-w-lg rounded-md bg-red-500 py-2 px-8 text-white'
-                      : 'max-w-lg rounded-md bg-red-500 py-2 px-8 text-white'
-                  }
-                >
-                  <p className="text-center text-base font-extralight uppercase">
-                    {format(new Date(ev.date), 'EEE', { locale: ca })}
-                  </p>
-                  <p className="text-center text-3xl font-black">
-                    {format(new Date(ev.date), 'dd', {
-                      locale: ca,
-                    })}
-                  </p>
-                  <p className="text-center text-base font-extralight uppercase">
-                    {format(new Date(ev.date), 'LLL yy', { locale: ca })}
-                  </p>
-                </div>
+                    }
+                  >
+                    <p className="text-center text-base font-extralight uppercase">
+                      {format(new Date(ev.date), 'EEE', { locale: ca })}
+                    </p>
+                    <p className="text-center text-3xl font-black">
+                      {format(new Date(ev.date), 'dd', {
+                        locale: ca,
+                      })}
+                    </p>
+                    <p className="text-center text-base font-extralight uppercase">
+                      {format(new Date(ev.date), 'LLL yy', { locale: ca })}
+                    </p>
+                  </div>
+                </Link>
               </div>
             </div>
           ))}
