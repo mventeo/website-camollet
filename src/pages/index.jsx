@@ -42,13 +42,13 @@ export default function Index({ preview, posts, heroPost, agenda }) {
     <>
       {/* <Banner /> */}
       <Head>
-        <title>Club Atlètic Mollet</title>
+        <title>{CMS_NAME} - Fem atletisme des de 1931</title>
         <meta
           name="description"
           content="Club Atlètic Mollet. Fem atletisme des de 1931"
         />
       </Head>
-      <Header />
+
       <Container id="main" className="bg-white">
         <Hero heroPost={heroPost} />
         <Sponsors />
@@ -89,7 +89,10 @@ export default function Index({ preview, posts, heroPost, agenda }) {
               </dl>
             </div>
             <div className="pt-8 text-center">
-              <Button className="bg-red-500  hover:bg-red-600" href="/escola">
+              <Button
+                className="bg-red-500  hover:bg-red-600"
+                href="/properament"
+              >
                 Vull més informació
               </Button>
             </div>
@@ -112,7 +115,7 @@ export default function Index({ preview, posts, heroPost, agenda }) {
                   formaran en la pràctica de l&apos;atletisme amb valors de
                   respecte a l&apos;esport i els companys. <br />
                   <br />A partir dels 6 anys i fins els 14, en horaris de 18:00
-                  a 19:30, tots els dilluns, dimarts i divendres.
+                  a 19:30, tots els dilluns, dimecres i divendres.
                   <br />
                   Podeu triar entre 1 dia a la setmana, o 2-3 dies, i les
                   families amb germans tenen descompte.
@@ -120,7 +123,7 @@ export default function Index({ preview, posts, heroPost, agenda }) {
                 <div className="text-center">
                   <Button
                     className="bg-red-500  hover:bg-red-600"
-                    href="/escola"
+                    href="/escola/inscripcio"
                   >
                     Vull més informació
                   </Button>
@@ -142,9 +145,8 @@ export default function Index({ preview, posts, heroPost, agenda }) {
             </div>
           </div>
         </div>
+        {/* <Footer showContact="false" /> */}
       </Container>
-
-      <Footer />
     </>
   )
 }
@@ -155,5 +157,6 @@ export async function getStaticProps({ preview = false }) {
   const agenda = (await getNextAgenda()) ?? []
   return {
     props: { preview, posts, heroPost, agenda },
+    revalidate: 10,
   }
 }

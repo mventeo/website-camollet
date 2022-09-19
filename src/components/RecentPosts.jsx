@@ -7,7 +7,6 @@ import { Button } from './Button'
 import { Container } from './Container'
 
 export function RecentPosts({ posts }) {
-  console.log(posts)
   return (
     <>
       {/* <div className="px-4 pt-16 pb-20 sm:px-6 lg:px-8 lg:pt-16 lg:pb-16"> */}
@@ -46,7 +45,7 @@ export function RecentPosts({ posts }) {
                 <div className="flex flex-1 flex-col justify-between bg-white lg:px-6">
                   <div className="flex-1">
                     <Link
-                      href={`/posts/${post.slug}`}
+                      href={`/publicacions/${post.slug}`}
                       className="font-sans text-lg font-bold hover:underline"
                     >
                       {post.title}
@@ -55,10 +54,15 @@ export function RecentPosts({ posts }) {
                       {post.excerpt}
                     </p>
                     <div className="text-sm font-medium">
-                      <div className="mt-3 hover:underline">
-                        <span className="rounded-lg bg-blue-200 py-1 px-2">
-                          Article
-                        </span>
+                      <div className="mt-2">
+                        {post.metadata.tags.map((tag) => (
+                          <span
+                            key={tag.name}
+                            className="mr-2 rounded bg-blue-400 px-2 py-1 text-sm text-white md:text-base"
+                          >
+                            {tag.name}
+                          </span>
+                        ))}
                       </div>
                     </div>
                   </div>

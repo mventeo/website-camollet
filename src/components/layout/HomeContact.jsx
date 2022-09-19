@@ -1,5 +1,6 @@
 import { MailIcon, PhoneIcon, HomeIcon } from '@heroicons/react/outline'
 import { Container } from '@/components/Container'
+import Link from 'next/link'
 
 export function HomeContact() {
   return (
@@ -50,7 +51,9 @@ export function HomeContact() {
                   />
                 </div>
                 <div className="ml-3 text-base text-gray-500">
-                  <p>camollet@camollet.com</p>
+                  <Link href="mailto://camollet@camollet.cat">
+                    camollet@camollet.com
+                  </Link>
                 </div>
               </div>
             </div>

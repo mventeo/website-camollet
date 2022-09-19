@@ -10,24 +10,28 @@ import { NavLink } from '@/components/NavLink'
 
 const links = [
   {
+    name: 'Inici',
+    href: '/',
+  },
+  {
     name: 'Club',
-    href: '/club',
+    href: '/properament',
   },
   {
     name: 'Escola',
-    href: '/escola',
+    href: '/escola/inscripcio',
   },
   {
     name: 'Cursa de Sant Vicenç',
-    href: '/cursa',
+    href: 'publicacions/cursa-de-sant-vicenc-2022',
   },
   {
     name: 'Miting Ciutat de Mollet',
-    href: '/miting',
+    href: '/properament',
   },
   {
     name: 'Publicacions',
-    href: '/publicacions',
+    href: '/properament',
   },
 ]
 
@@ -107,7 +111,7 @@ function MobileNavigation() {
             ))}
             <hr />
             <div className="flex justify-center">
-              <Button href="/register" color="red" className="mt-2 w-1/2">
+              <Button href="/properament" color="red" className="mt-2 w-1/2">
                 <span>Fes-te soci</span>
               </Button>
             </div>
@@ -134,7 +138,11 @@ export function Header() {
             </div>
 
             <div className="mt-4 justify-items-end">
-              <Button href="/register" color="red" className="hidden md:flex">
+              <Button
+                href="/properament"
+                color="red"
+                className="hidden md:flex"
+              >
                 <span>
                   Fes-te soci <span className="hidden lg:inline">avui</span>
                 </span>

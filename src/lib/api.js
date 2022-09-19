@@ -1,120 +1,6 @@
-const POST_GRAPHQL_FIELDS = `
-slug
-date
-title
-subtitle
-excerpt
-content {
-  json
-  links{
-    assets{
-      block{
-        sys{
-          id
-        }
-        url
-        description
-        contentType
-      }
-    }
-  }
-}
-coverImage{
-  url
-  contentfulMetadata{
-    tags{
-      name
-    }
-  }
-}
-coverImageAuthor
-coverImageAuthorUrl
-metadata:contentfulMetadata{
-  tags{
-    name
-  }
-}
-participants:participantCollection{
-  items{
-    title
-    url
-    file{
-      url
-      contentType
-    }
-  }
-}
-participantTextSection
-results:resultCollection{
-  items{
-    title
-    url
-    file{
-      url
-      contentType
-    }
-  }
-}
-resultTextSection
-docTextSection
-docs:docCollection{
-  items{
-    title
-    url
-    file{
-      url
-      contentType
-    }
-  }
-}
-docTextSection
-otherDocs:otherDocCollection{
-  items{
-    title
-    url
-    file{
-      url
-      contentType
-    }
-  }
-}
-otherDocTextSection
-hero
-showInHome
-author{
-  name
-  picture{
-    url
-  }
-}
-moreInfoText
-moreInfoUrl
-gallery:galleryCollection{
-  items{
-    title
-    type
-    link
-    author{
-      name
-      link
-    }
-  }
-}
-sponsors:sponsorCollection{
-  items{
-    name
-    website
-    organizer
-    sponsor
-    collaborator
-    logo{
-      contentType
-      url
-    }
-  }
-}
-`
-
+import { POST_GRAPHQL_FIELDS } from './post'
+import { AGENDA_GRAPHQL_FIELDS } from './agenda'
+import { STATICPAGE_GRAPHQL_FIELDS } from './staticPage'
 const HEROPOST_GRAPHQL_FIELDS = `
 title
 subtitle
@@ -129,17 +15,6 @@ docs: documentsCollection {
     title
     fileName
     url
-  }
-}
-`
-
-const AGENDA_GRAPHQL_FIELDS = `
-slug
-title
-date
-metadata:contentfulMetadata{
-  tags{
-    name
   }
 }
 `
@@ -202,6 +77,10 @@ function extractAgendaEntries(fetchResponse) {
 
 function extractAgenda(fetchResponse) {
   return fetchResponse?.data?.agendaCollection?.items?.[0]
+}
+
+function extractStaticPage(fetchResponse) {
+  return fetchResponse?.data?.staticPageCollection?.items?.[0]
 }
 
 export async function getPreviewPostBySlug(slug) {
@@ -277,7 +156,7 @@ export async function getRecentPostsForHome(preview) {
     `query {
       postCollection(order: date_DESC, preview: ${
         preview ? 'true' : 'false'
-      }, limit:5, where:{hero:false}) {
+      }, limit:8, where:{hero:false, showInHome:true}) {
         items {
           ${POST_GRAPHQL_FIELDS}
         }
@@ -323,7 +202,7 @@ export async function getPoster(preview) {
 export async function getNextAgenda() {
   const entries = await fetchGraphQL(
     `query {
-      agendaCollection(where:{date_gte:"2022-09-01"}, order:date_ASC) {
+      agendaCollection(where:{date_gte:"2022-09-01"}, order:date_ASC, limit:5) {
         items {
           ${AGENDA_GRAPHQL_FIELDS}
         }
@@ -332,6 +211,52 @@ export async function getNextAgenda() {
     false
   )
   return extractAgendaEntries(entries)
+}
+
+export async function getAllAgenda() {
+  const entries = await fetchGraphQL(
+    `query {
+      agendaCollection(preview:false) {
+        items {
+          ${AGENDA_GRAPHQL_FIELDS}
+        }
+      }
+    }`,
+    false
+  )
+  return extractAgendaEntries(entries)
+}
+
+export async function getAgendaContent(slug, preview) {
+  const entry = await fetchGraphQL(
+    `query {
+      agendaCollection(where: { slug: "${slug}" }, preview: ${
+      preview ? 'true' : 'false'
+    }, limit: 1) {
+        items {
+          ${AGENDA_GRAPHQL_FIELDS}
+        }
+      }
+    }`,
+    false
+  )
+  return extractAgenda(entry)
+}
+
+export async function getStaticPage(slug, preview) {
+  const entry = await fetchGraphQL(
+    `query {
+      staticPageCollection(where: { slug: "${slug}" }, preview: ${
+      preview ? 'true' : 'false'
+    }, limit: 1) {
+        items {
+          ${STATICPAGE_GRAPHQL_FIELDS}
+        }
+      }
+    }`,
+    false
+  )
+  return extractStaticPage(entry)
 }
 
 export async function getAllCoaches(preview) {

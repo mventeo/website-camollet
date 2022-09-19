@@ -4,30 +4,53 @@ import { HomeContact } from './HomeContact'
 /* This example requires Tailwind CSS v2.0+ */
 const navigation = {
   club: [
+    { name: 'Gimnàs', href: '/club/gimnas' },
     // { name: 'Marketing', href: '#' },
   ],
   escola: [
-    { name: 'Calendari Escola', href: '/calendar' },
+    { name: 'Grups', href: '/properament' },
+    { name: 'Inscripcions', href: '/escola/inscripcio' },
+    { name: 'Calendari Escola', href: '/properament' },
     // { name: 'Documentation', href: '#' },
     // { name: 'Guides', href: '#' },
     // { name: 'API Status', href: '#' },
   ],
-  grups: [
-    // { name: 'About', href: '#' },
-    // { name: 'Blog', href: '#' },
-    // { name: 'Jobs', href: '#' },
-    // { name: 'Press', href: '#' },
-    // { name: 'Partners', href: '#' },
+  manteniment: [
+    { name: 'manteniment1', href: '/preparement' },
+    { name: 'manteniment2', href: '/preparement' },
+  ],
+  tecnificacio: [
+    { name: 'Velocitat i salts', href: '/tecnificacio/velocitat' },
+    { name: 'Fons i mig fons', href: '/tecnificacio/fons' },
+    { name: 'Llançaments', href: '/tecnificacio/llençaments' },
+    { name: 'Veterans', href: '/tecnificacio/veterans' },
   ],
   competicions: [
-    // { name: 'Claim', href: '#' },
+    {
+      name: 'Cursa Sant Vicenç',
+      href: 'publicacions/cursa-de-sant-vicenc-2022',
+    },
+    { name: 'Míting Ciutat de Mollet', href: '/properament' },
+    { name: 'Cross Escolar de Mollet', href: '/properament' },
+    {
+      name: '58é Campionats del Vallès',
+      href: 'publicacions/58e-campionats-del-valles',
+    },
   ],
   legal: [
     { name: 'Avís Legal', href: '/legal' },
+    { name: 'Política de cookies', href: '/cookies' },
+    { name: 'Política de privacitat i xarxes socials', href: '/privacitat' },
     // { name: 'Privacy', href: '#' },
     // { name: 'Terms', href: '#' },
   ],
   links: [
+    {
+      name: 'Ajuntament de Mollet del Vallès',
+      href: 'https://molletvalles.cat/',
+      target: '_blank',
+      img: '/logos/Logo_AjP.png',
+    },
     {
       name: "Federació Catalana d'Atletisme",
       href: 'https://fcatletisme.cat/',
@@ -47,7 +70,7 @@ const navigation = {
   social: [
     {
       name: 'Facebook',
-      href: '#',
+      href: 'https://www.facebook.com/clubatleticmollet',
       icon: (props) => (
         <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
           <path
@@ -60,7 +83,7 @@ const navigation = {
     },
     {
       name: 'Instagram',
-      href: '#',
+      href: 'https://www.instagram.com/camollet/',
       icon: (props) => (
         <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
           <path
@@ -73,7 +96,7 @@ const navigation = {
     },
     {
       name: 'Twitter',
-      href: '#',
+      href: 'https://twitter.com/camollettwit',
       icon: (props) => (
         <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
           <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
@@ -83,10 +106,10 @@ const navigation = {
   ],
 }
 
-export function Footer({ legislation }) {
+export function Footer({ showContact = true }) {
   return (
     <>
-      <HomeContact />
+      {showContact == true && <HomeContact />}
       <footer className="bg-gray-100 pt-2" aria-labelledby="footer-heading">
         <h2 id="footer-heading" className="sr-only">
           Footer
@@ -107,14 +130,15 @@ export function Footer({ legislation }) {
 
               <div className="flex space-x-6">
                 {navigation.social.map((item) => (
-                  <a
+                  <Link
                     key={item.name}
                     href={item.href}
+                    target="_blank"
                     className="text-gray-400 hover:text-gray-500"
                   >
                     <span className="sr-only">{item.name}</span>
                     <item.icon className="h-6 w-6" aria-hidden="true" />
-                  </a>
+                  </Link>
                 ))}
               </div>
             </div>
@@ -142,24 +166,22 @@ export function Footer({ legislation }) {
               <ul role="list" className="mt-4 space-y-4">
                 {navigation.club.map((item) => (
                   <li key={item.name}>
-                    <a
+                    <Link
                       href={item.href}
                       className="text-base text-gray-500 hover:text-gray-900"
                     >
                       {item.name}
-                    </a>
-                  </li>
-                ))}
-                {legislation && (
-                  <li>
-                    <Link
-                      href="https://assets.ctfassets.net/8rp1uuyxnm8g/7lShD021W2i2vZm9bWRg0r/7246dcdd2220bcb7a4f38a882e5305a7/Regalment_regim_intern_CAMollet.pdf"
-                      target="_blanck"
-                    >
-                      Reglament Intern
                     </Link>
                   </li>
-                )}
+                ))}
+                <li>
+                  <Link
+                    href="https://assets.ctfassets.net/8rp1uuyxnm8g/7lShD021W2i2vZm9bWRg0r/7246dcdd2220bcb7a4f38a882e5305a7/Regalment_regim_intern_CAMollet.pdf"
+                    target="_blank"
+                  >
+                    Reglament Intern
+                  </Link>
+                </li>
               </ul>
             </div>
             <div className="mt-12 md:mt-0">
@@ -179,10 +201,10 @@ export function Footer({ legislation }) {
             </div>
             <div>
               <h3 className="text-base font-medium text-gray-900">
-                Tecnificació
+                Manteniment
               </h3>
               <ul role="list" className="mt-4 space-y-4">
-                {navigation.grups.map((item) => (
+                {navigation.manteniment.map((item) => (
                   <li key={item.name}>
                     <a
                       href={item.href}
@@ -194,7 +216,24 @@ export function Footer({ legislation }) {
                 ))}
               </ul>
             </div>
-            <div className="md:grid md:grid-cols-3 md:gap-8">
+            <div>
+              <h3 className="text-base font-medium text-gray-900">
+                Tecnificació
+              </h3>
+              <ul role="list" className="mt-4 space-y-4">
+                {navigation.tecnificacio.map((item) => (
+                  <li key={item.name}>
+                    <a
+                      href={item.href}
+                      className="text-base text-gray-500 hover:text-gray-900"
+                    >
+                      {item.name}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="">
               <h3 className="text-base font-medium text-gray-900">
                 Competicions
               </h3>
@@ -212,45 +251,41 @@ export function Footer({ legislation }) {
               </ul>
             </div>
             <div className="mt-12 md:mt-0">
-              <h3 className="justify-center text-base font-medium text-gray-900">
-                Enllaços
-              </h3>
-              <ul role="list" className="mt-1 text-center">
+              <h3 className="text-base font-medium text-gray-900">Enllaços</h3>
+              <ul role="list" className="mt-1">
                 {navigation.links.map((item) => (
                   <li key={item.name}>
-                    <a
+                    <Link
                       href={item.href}
-                      className="flex justify-center text-base text-gray-500 hover:text-gray-900"
+                      className="flex text-base text-gray-500 hover:text-gray-900"
                       target={item.target}
                     >
                       <picture>
                         <source srcSet={item.img} />
                         <img src={item.img} alt={item.name} />
                       </picture>
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="mt-12 md:mt-0">
-              <h3 className="text-base font-medium text-gray-900">Legal</h3>
-              <ul role="list" className="mt-4 space-y-4">
-                {navigation.legal.map((item) => (
-                  <li key={item.name}>
-                    <Link
-                      href={item.href}
-                      className="text-base text-gray-500 hover:text-gray-900"
-                    />
-                    {item.name}
+                    </Link>
                   </li>
                 ))}
               </ul>
             </div>
           </div>
         </div>
-        <div className="mt-12 border-t border-gray-200 pt-8">
-          <p className="text-base text-gray-400 xl:text-center">
+        <div className="mt-12 grid grid-cols-2 border-t border-gray-200 pt-2">
+          <p className="ml-8 text-base text-gray-400 xl:text-center">
             &copy; 2022 Club Atlètic Mollet. Tots els drets reservats.
+          </p>
+          <p className="mr-8 flex justify-end text-base text-gray-400 xl:text-left">
+            {navigation.legal.map((item, idx) => (
+              <span key={item.name}>
+                <Link
+                  href={item.href}
+                  className="mr-4 text-sm text-gray-500 hover:text-gray-900"
+                >
+                  {item.name}
+                </Link>
+              </span>
+            ))}
           </p>
         </div>
       </footer>

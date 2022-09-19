@@ -134,7 +134,7 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
-export function CalendarGroup() {
+export function SchoolCalendar() {
   return (
     <div className="lg:flex lg:h-full lg:flex-col">
       <header className="relative z-20 flex items-center justify-between border-b border-gray-200 py-4 px-6 lg:flex-none">
