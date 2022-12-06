@@ -59,8 +59,8 @@ export function Hero({ heroPost }) {
                       : ''
                   }
                 >
-                  {heroPost.docs.items.map((doc) => (
-                    <div key={doc.title}>
+                  {heroPost.participants.items.map((doc) => (
+                    <div key={doc.shortTitle}>
                       <div className="mt-10 sm:flex sm:justify-center lg:justify-center">
                         <Link
                           href={doc.url ? doc.url : '#'}
@@ -68,7 +68,7 @@ export function Hero({ heroPost }) {
                           className="flex w-full items-center justify-center px-4 py-2 text-center text-base font-medium text-red-600 hover:text-red-700 md:py-2 md:px-4 md:text-base"
                         >
                           <DocumentIcon className="h-10 align-top" />
-                          {doc.title}
+                          {doc.shortTitle}
                         </Link>
                       </div>
                     </div>
