@@ -11,6 +11,7 @@ import { Hero } from '@/components/Hero'
 import { RecentPosts } from '@/components/RecentPosts'
 import { Footer } from '@/components/layout/Footer'
 import { Sponsors } from '@/components/Sponsors'
+import { SponsorsCursa } from '@/components/SponsorsCursa'
 import { LightningBoltIcon, ScaleIcon } from '@heroicons/react/outline'
 import { Container } from '@/components/Container'
 import { Button } from '@/components/Button'
@@ -52,7 +53,7 @@ export default function Index({ preview, posts, heroPost, agenda }) {
       <Container id="main" className="bg-white">
         <Hero heroPost={heroPost} />
         <Sponsors />
-        <NextAgenda agenda={agenda} />
+        {agenda.length > 0 && <NextAgenda agenda={agenda} />}
         <RecentPosts posts={posts} />
 
         <div>

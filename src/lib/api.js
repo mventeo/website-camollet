@@ -200,9 +200,11 @@ export async function getPoster(preview) {
 }
 
 export async function getNextAgenda() {
+  let today = new Date()
+  console.log(today)
   const entries = await fetchGraphQL(
     `query {
-      agendaCollection(where:{date_gte:"2022-09-01"}, order:date_ASC, limit:5) {
+      agendaCollection(where:{date_gte:"${today}"}, order:date_ASC, limit:5) {
         items {
           ${AGENDA_GRAPHQL_FIELDS}
         }
