@@ -15,7 +15,7 @@ const links = [
   },
   {
     name: 'Club',
-    href: '/properament',
+    href: '/club/inscripcio',
   },
   {
     name: 'Escola',
@@ -111,7 +111,11 @@ function MobileNavigation() {
             ))}
             <hr />
             <div className="flex justify-center">
-              <Button href="/properament" color="red" className="mt-2 w-1/2">
+              <Button
+                href="/club/inscripcio"
+                color="red"
+                className="mt-2 w-1/2"
+              >
                 <span>Fes-te soci</span>
               </Button>
             </div>
@@ -139,7 +143,7 @@ export function Header() {
 
             <div className="mt-4 justify-items-end">
               <Button
-                href="/properament"
+                href="/club/inscripcio"
                 color="red"
                 className="hidden md:flex"
               >
