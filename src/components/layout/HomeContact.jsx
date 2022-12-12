@@ -52,7 +52,7 @@ export function HomeContact() {
                 </div>
                 <div className="ml-3 text-base text-gray-500">
                   <Link href="mailto://camollet@camollet.cat">
-                    camollet@camollet.com
+                    camollet@camollet.cat
                   </Link>
                 </div>
               </div>
