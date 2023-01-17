@@ -52,6 +52,7 @@ export default function Index({ preview, posts, heroPost, agenda }) {
       </Head>
 
       <Container id="main" className="bg-white">
+        <Hero heroPost={heroPost} />
         {/* Banner */}
         <div className="relative overflow-hidden bg-white pb-8">
           {/* Decorative background image and gradient */}
@@ -104,7 +105,6 @@ export default function Index({ preview, posts, heroPost, agenda }) {
             </div>
           </section>
         </div>
-        <Hero heroPost={heroPost} />
         <Sponsors />
         {agenda.length > 0 && <NextAgenda agenda={agenda} />}
         <RecentPosts posts={posts} />
