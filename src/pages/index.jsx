@@ -84,19 +84,19 @@ export default function Index({ preview, posts, heroPost, agenda }) {
                 className="tracking-tight0 text-2xl font-bold text-red-600 sm:text-2xl  lg:text-2xl"
               >
                 <span className="uppercase">
-                  La teva botiga d'esport online
+                  La teva botiga d`esport online
                 </span>
                 , et regala un 5% de descompte a la teva propera compra
               </h2>
               <p className="mx-auto mt-4 max-w-xl text-xl text-gray-600">
-                Gaudeix d'aquest descompte si ets participant de la propera
+                Gaudeix d`aquest descompte si ets participant de la propera
                 cursa de Sant Vicenç i descarregant el flyer digital
               </p>
               <a
                 href="/docs/flyer_cursa_sant Vicen_mollet_2023.pdf"
                 className="mt-6 inline-block w-full rounded-md border border-transparent bg-red-600 py-3 px-8 font-medium text-white hover:bg-red-400 sm:w-auto"
               >
-                Descarrega't el teu flyer digital
+                Descarrega`t el teu flyer digital
               </a>
             </div>
           </section>
