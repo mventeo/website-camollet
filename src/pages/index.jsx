@@ -17,6 +17,7 @@ import { Container } from '@/components/Container'
 import { Button } from '@/components/Button'
 import { NextAgenda } from '@/components/NextAgenda'
 import { Banner } from '@/components/layout/Banner'
+import Image from 'next/image'
 
 const features = [
   {
@@ -51,6 +52,55 @@ export default function Index({ preview, posts, heroPost, agenda }) {
       </Head>
 
       <Container id="main" className="bg-white">
+        {/* Banner */}
+        <div className="relative overflow-hidden bg-white pb-8">
+          {/* Decorative background image and gradient */}
+          <div aria-hidden="true" className="absolute inset-0">
+            <div className="absolute inset-0 mx-auto max-w-7xl overflow-hidden xl:px-8">
+              {/* <Image
+                href="/logos/deporvillage.png"
+                alt=""
+                className="h-full w-full object-cover object-center"
+              /> */}
+            </div>
+            <div className="absolute inset-0 bg-white bg-opacity-75" />
+            <div className="absolute inset-0 bg-gradient-to-t from-white via-white" />
+          </div>
+
+          {/* Callout */}
+          <section
+            aria-labelledby="sale-heading"
+            className="relative mx-auto flex max-w-7xl flex-col items-center px-4 pt-32 text-center sm:px-6 lg:px-8"
+          >
+            <div className="mx-auto max-w-2xl lg:max-w-none">
+              <Image
+                src="/logos/deporvillage.png"
+                width={570}
+                height={195}
+                alt="Deporvillage logo"
+              />
+              <h2
+                id="sale-heading"
+                className="tracking-tight0 text-2xl font-bold text-red-600 sm:text-2xl  lg:text-2xl"
+              >
+                <span className="uppercase">
+                  La teva botiga d'esport online
+                </span>
+                , et regala un 5% de descompte a la teva propera compra
+              </h2>
+              <p className="mx-auto mt-4 max-w-xl text-xl text-gray-600">
+                Gaudeix d'aquest descompte si ets participant de la propera
+                cursa de Sant Vicenç i descarregant el flyer digital
+              </p>
+              <a
+                href="/docs/flyer_cursa_sant Vicen_mollet_2023.pdf"
+                className="mt-6 inline-block w-full rounded-md border border-transparent bg-red-600 py-3 px-8 font-medium text-white hover:bg-red-400 sm:w-auto"
+              >
+                Descarrega't el teu flyer digital
+              </a>
+            </div>
+          </section>
+        </div>
         <Hero heroPost={heroPost} />
         <Sponsors />
         {agenda.length > 0 && <NextAgenda agenda={agenda} />}
