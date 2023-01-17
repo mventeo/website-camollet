@@ -90,7 +90,10 @@ export default function Index({ preview, posts, heroPost, agenda }) {
               </h2>
               <p className="mx-auto mt-4 max-w-xl text-xl text-gray-600">
                 Gaudeix d`aquest descompte si ets participant de la propera
-                cursa de Sant Vicenç i descarregant el flyer digital
+                cursa de Sant Vicenç i descarregant el flyer digital.
+              </p>
+              <p className="mx-auto mt-1 max-w-xl text-sm text-gray-600">
+                Vàlid a partir del dia de la cursa (29 de gener de 2023)
               </p>
               <a
                 href="/docs/flyer_cursa_sant Vicen_mollet_2023.pdf"
