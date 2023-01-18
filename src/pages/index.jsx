@@ -53,7 +53,7 @@ export default function Index({ preview, posts, heroPost, agenda }) {
 
       <Container id="main" className="bg-white">
         <Hero heroPost={heroPost} />
-        {/* Banner */}
+        {/* Banner  */}
         <div className="relative overflow-hidden bg-white pb-8">
           {/* Decorative background image and gradient */}
           <div aria-hidden="true" className="absolute inset-0">
