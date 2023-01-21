@@ -42,7 +42,7 @@ const features = [
 export default function Index({ preview, posts, heroPost, agenda }) {
   return (
     <>
-      {/* <Banner  /> */}
+      {/* <Banner   /> */}
       <Head>
         <title>{CMS_NAME} - Fem atletisme des de 1931</title>
         <meta
