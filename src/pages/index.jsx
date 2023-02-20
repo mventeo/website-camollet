@@ -68,7 +68,7 @@ export default function Index({ preview, posts, heroPost, agenda }) {
             <div className="absolute inset-0 bg-gradient-to-t from-white via-white" />
           </div>
 
-          
+              
         </div>
         <Sponsors />
         {agenda.length > 0 && <NextAgenda agenda={agenda} />}
