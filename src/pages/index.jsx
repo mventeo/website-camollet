@@ -73,7 +73,7 @@ export default function Index({ preview, posts, heroPost, agenda }) {
         <Sponsors />
         {agenda.length > 0 && <NextAgenda agenda={agenda} />}
         <RecentPosts posts={posts} />
-        {/* Highligths   */}
+        {/* Highligths    */}
         <div>
           <div className="bg-red-100 to-zinc-700 py-12">
             <h2 className="text-center text-3xl font-bold tracking-tight text-zinc-700">
