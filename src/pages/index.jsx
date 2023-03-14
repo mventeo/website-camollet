@@ -61,7 +61,7 @@ export default function Index({ preview, posts, heroPost, agenda }) {
               {/* <Image
                 href="/logos/deporvillage.png"
                 alt=""
-                className="h-full w-full object-cover object-center"
+                className="h-full w-full object-cover object-centerv"
               /> */}
             </div>
             <div className="absolute inset-0 bg-white bg-opacity-75" />
