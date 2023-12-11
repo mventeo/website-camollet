@@ -23,12 +23,12 @@ const links = [
   },
   {
     name: 'Cursa de Sant Vicenç',
-    href: 'publicacions/cursa-de-sant-vicenc',
+    href: 'publicacions/cursa-de-sant-vicenc-2024',
   },
-  {
-    name: 'Miting Ciutat de Mollet',
-    href: '/properament',
-  },
+  // {
+  //   name: 'Miting Ciutat de Mollet',
+  //   href: '/properament',
+  // },
   {
     name: 'Publicacions',
     href: '/properament',
