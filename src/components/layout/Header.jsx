@@ -29,10 +29,10 @@ const links = [
   //   name: 'Miting Ciutat de Mollet',
   //   href: '/properament',
   // },
-  {
-    name: 'Publicacions',
-    href: '/properament',
-  },
+  // {
+  //   name: 'Publicacions',
+  //   href: '/properament',
+  // },
 ]
 
 function MobileNavLink({ href, children }) {
