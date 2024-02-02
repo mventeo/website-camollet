@@ -178,9 +178,9 @@ export default function Escola() {
 
       {/* FAQ */}
       <div className="l mx-auto max-w-7xl bg-red-50 py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
-        {/* <h2 className="text-center text-3xl font-bold tracking-tight text-gray-900">
+        <h2 className="text-center text-3xl font-bold tracking-tight text-gray-900">
           Preguntes freqüents
-        </h2> */}
+        </h2>
         <div className="mt-12">
           <dl className="space-y-10 md:grid md:grid-cols-2 md:grid-rows-2 md:gap-x-8 md:gap-y-12 md:space-y-0 lg:grid-cols-3">
             {faqs.map((faq) => (
