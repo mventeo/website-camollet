@@ -6,7 +6,6 @@ import { CMS_NAME } from '@/lib/constants'
 /* This example requires Tailwind CSS v2.0+ */
 import { CheckIcon, DocumentDownloadIcon } from '@heroicons/react/solid'
 import Link from 'next/link'
-import Image from 'next/image'
 
 const tiers = [
   {
@@ -97,11 +96,11 @@ const faqs = [
 ]
 
 const PAGE_TITLE = CMS_NAME + ' - Fes-te soci del Club Atlètic Mollet'
-const MAIN_TITLE = 'Fes-te soci del Club Atlètic Mollet'
-const MAIN_DESC = `Fes servir el codi QR que pots trobar en aquesta pàgina per fer l'inscripció.`
+const MAIN_TITLE = 'Quota de soci 2021/2022'
+const MAIN_DESC = `Tria entrenar amb monitor o sense, i pagaments anuals, dos quotes o trimestrals`
 const PAYMENT_INFO = 'Informació sobre els pagaments'
 const DOC_TITLE = 'Documentació necessaria per formalitzar la inscripció'
-const DOC_DESC = ''
+const DOC_DESC =
   "L'inscripció és podrá fer tots els dilluns, dimecres i divendres a la secretaria del club en horari de 18:00 a 19:30. Per formalitzar la inscripció cal portar els documents i omplir el formulari que indiquem a continuació."
 const DOC_IMPORTANT = ''
 
@@ -121,18 +120,55 @@ export default function Escola() {
               {MAIN_DESC}
             </p>
           </div>
-            <div className='text-center py-10'>
-              <Link href="https://camollet.playoffinformatica.com/preinscripcion/?fbclid=PAAabGXwZ2TPBtPxNWZEMnmo-UejWhgiq7pMGa_q0dCVbNDoGYbgf38-18_Sg">
-                <Image
-                  className='content-center'
-                  src="/logos/frame-2.png"
-                  width={400}
-                  height={500}
-                  alt="QR inscripció"
-                />
-              </Link>
-            </div>
-
+          <div className="mt-12 space-y-4 sm:mt-16 sm:grid sm:grid-cols-2 sm:gap-6 sm:space-y-0 lg:mx-auto lg:max-w-4xl xl:mx-0 xl:max-w-none xl:grid-cols-2">
+            {tiers.map((tier) => (
+              <div
+                key={tier.name}
+                className="divide-y divide-gray-200 rounded-lg border border-gray-200 shadow-sm"
+              >
+                <div className="p-6">
+                  <h2 className="text-lg font-medium font-black leading-6 text-gray-900">
+                    {tier.name}
+                  </h2>
+                  <p className="mt-4 text-sm text-gray-500">
+                    {tier.description}
+                  </p>
+                  <p className="mt-8">
+                    <span className="text-4xl font-bold tracking-tight text-gray-900">
+                      {tier.priceYearly} €
+                    </span>{' '}
+                    <span className="text-base font-medium text-gray-500">
+                      /any
+                    </span>
+                  </p>
+                </div>
+                <div className="px-6 pt-6 pb-8">
+                  <h3 className="text-sm font-medium font-bold text-gray-900">
+                    {PAYMENT_INFO}
+                  </h3>
+                  <ul role="list" className="mt-6 space-y-4">
+                    {tier.paymentsInfo.map((feature) => (
+                      <li key={feature.period} className="flex space-x-3">
+                        {/* <CheckIcon
+                        className="h-5 w-5 flex-shrink-0 text-green-500"
+                        aria-hidden="true"
+                      /> */}
+                        <span className="text-sm font-bold text-gray-500">
+                          {feature.period}:
+                        </span>
+                        <span className="text-sm text-gray-500">
+                          {feature.desc}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                {tier.extra && (
+                  <div className="px-6 pt-6 pb-8 text-sm">{tier.extra}</div>
+                )}
+              </div>
+            ))}
+          </div>
         </div>
       </div>
       <div className="mx-auto max-w-7xl bg-white  px-4  sm:px-6 lg:px-8">
