@@ -112,7 +112,7 @@ function MobileNavigation() {
             <hr />
             <div className="flex justify-center">
               <Button
-                href="/club/inscripcio"
+                href="https://camollet.playoffinformatica.com/preinscripcion/?fbclid=PAAabGXwZ2TPBtPxNWZEMnmo-UejWhgiq7pMGa_q0dCVbNDoGYbgf38-18_Sg"
                 color="red"
                 className="mt-2 w-1/2"
               >
@@ -143,7 +143,7 @@ export function Header() {
 
             <div className="mt-4 justify-items-end">
               <Button
-                href="/club/inscripcio"
+                href="https://camollet.playoffinformatica.com/preinscripcion/?fbclid=PAAabGXwZ2TPBtPxNWZEMnmo-UejWhgiq7pMGa_q0dCVbNDoGYbgf38-18_Sg"
                 color="red"
                 className="hidden md:flex"
               >
