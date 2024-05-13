@@ -89,30 +89,14 @@ export default function Index({ preview, posts, heroPost, agenda }) {
             </p>
             <div className="mx-auto max-w-xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
               <h2 className="sr-only">Fes-te soci del Club Atlètic Mollet.</h2>
-              <dl className="space-y-10 rounded-lg lg:grid lg:grid-cols-3 lg:gap-8 lg:space-y-0">
-                {features.map((feature) => (
-                  <div
-                    key={feature.name}
-                    className="rounded-lg bg-white px-4 pb-8 shadow-lg"
-                  >
-                    <dt>
-                      <p className="mt-5 text-lg font-medium font-bold leading-6 text-red-500">
-                        {feature.name}
-                      </p>
-                    </dt>
-                    <dd className="mt-2 text-base text-black">
-                      {feature.description}
-                    </dd>
-                  </div>
-                ))}
-              </dl>
+              
             </div>
             <div className="pt-8 text-center">
               <Button
                 className="bg-red-500  hover:bg-red-600"
-                href="/properament"
+                href="https://camollet.playoffinformatica.com/preinscripcion/?fbclid=PAAabGXwZ2TPBtPxNWZEMnmo-UejWhgiq7pMGa_q0dCVbNDoGYbgf38-18_Sg"
               >
-                Vull més informació
+                Fes-te soci
               </Button>
             </div>
           </div>
