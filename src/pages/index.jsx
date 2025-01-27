@@ -1,4 +1,5 @@
-/* Changelog */
+/* Changelog 
+*/
 import {
   getActiveHeroPost,
   getRecentPostsForHome,
