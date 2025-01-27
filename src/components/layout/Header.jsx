@@ -26,7 +26,7 @@ const links = [
     href: 'publicacions/cursa-de-sant-vicenc-2025',
   },
   // {
-  //   name: 'Miting Ciutat de Mollet',dd
+  //   name: 'Miting Ciutat de Mollet',
   //   href: '/properament',
   // },
   // {
