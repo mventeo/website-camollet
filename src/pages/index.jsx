@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Image from 'next/image'
 
 export default function Index() {
   return (
@@ -20,15 +21,15 @@ export default function Index() {
         backgroundColor: 'white',
         padding: '20px'
       }}>
-        <img
-          src="/logos/Logo CAM.png"
-          alt="Club Atlètic Mollet"
-          style={{
-            width: '300px',
-            height: 'auto',
-            marginBottom: '40px'
-          }}
-        />
+        <div style={{ marginBottom: '40px' }}>
+          <Image
+            src="/logos/Logo CAM.png"
+            alt="Club Atlètic Mollet"
+            width={300}
+            height={300}
+            priority
+          />
+        </div>
         <h1 style={{
           fontSize: '32px',
           fontWeight: 'normal',
