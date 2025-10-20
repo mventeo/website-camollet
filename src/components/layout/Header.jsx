@@ -9,22 +9,22 @@ import { Logo } from '@/components/Logo'
 import { NavLink } from '@/components/NavLink'
 
 const links = [
-  {
-    name: 'Inici',
-    href: '/',
-  },
-  {
-    name: 'Club',
-    href: '/club/inscripcio',
-  },
-  {
-    name: 'Escola',
-    href: '/escola/inscripcio',
-  },
-  {
-    name: 'Cursa de Sant Vicenç',
-    href: 'publicacions/cursa-de-sant-vicenc-2025',
-  },
+  // {
+  //   name: 'Inici',
+  //   href: '/',
+  // },
+  // {
+  //   name: 'Club',
+  //   href: '/club/inscripcio',
+  // },
+  // {
+  //   name: 'Escola',
+  //   href: '/escola/inscripcio',
+  // },
+  // {
+  //   name: 'Cursa de Sant Vicenç',
+  //   href: 'publicacions/cursa-de-sant-vicenc-2025',
+  // },
   // {
   //   name: 'Miting Ciutat de Mollet',
   //   href: '/properament',
@@ -111,13 +111,13 @@ function MobileNavigation() {
             ))}
             <hr />
             <div className="flex justify-center">
-              <Button
+              {/* <Button
                 href="https://camollet.playoffinformatica.com/preinscripcion/?fbclid=PAAabGXwZ2TPBtPxNWZEMnmo-UejWhgiq7pMGa_q0dCVbNDoGYbgf38-18_Sg"
                 color="red"
                 className="mt-2 w-1/2"
               >
                 <span>Fes-te soci</span>
-              </Button>
+              </Button> */}
             </div>
           </Popover.Panel>
         </Transition.Child>
@@ -142,7 +142,7 @@ export function Header() {
             </div>
 
             <div className="mt-4 justify-items-end">
-              <Button
+              {/* <Button
                 href="https://camollet.playoffinformatica.com/preinscripcion/?fbclid=PAAabGXwZ2TPBtPxNWZEMnmo-UejWhgiq7pMGa_q0dCVbNDoGYbgf38-18_Sg"
                 color="red"
                 className="hidden md:flex"
@@ -150,7 +150,7 @@ export function Header() {
                 <span>
                   Fes-te soci <span className="hidden lg:inline">avui</span>
                 </span>
-              </Button>
+              </Button> */}
               <div className="flex justify-end md:hidden lg:mt-10">
                 <MobileNavigation />
               </div>
