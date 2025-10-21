@@ -4,43 +4,43 @@ import { HomeContact } from './HomeContact'
 /* This example requires Tailwind CSS v2.0+ */
 const navigation = {
   club: [
-    { name: 'Gimnàs', href: '/club/gimnas' },
+    // { name: 'Gimnàs', href: '/club/gimnas' },
     // { name: 'Marketing', href: '#' },
   ],
   escola: [
-    { name: 'Grups', href: '/properament' },
-    { name: 'Inscripcions', href: '/escola/inscripcio' },
-    { name: 'Calendari Escola', href: '/properament' },
+    // { name: 'Grups', href: '/properament' },
+    // { name: 'Inscripcions', href: '/escola/inscripcio' },
+    // { name: 'Calendari Escola', href: '/properament' },
     // { name: 'Documentation', href: '#' },
     // { name: 'Guides', href: '#' },
     // { name: 'API Status', href: '#' },
   ],
   manteniment: [
-    { name: 'manteniment1', href: '/preparement' },
-    { name: 'manteniment2', href: '/preparement' },
+    // { name: 'manteniment1', href: '/preparement' },
+    // { name: 'manteniment2', href: '/preparement' },
   ],
   tecnificacio: [
-    { name: 'Velocitat i salts', href: '/tecnificacio/velocitat' },
-    { name: 'Fons i mig fons', href: '/tecnificacio/fons' },
-    { name: 'Llançaments', href: '/tecnificacio/llençaments' },
-    { name: 'Veterans', href: '/tecnificacio/veterans' },
+    // { name: 'Velocitat i salts', href: '/tecnificacio/velocitat' },
+    // { name: 'Fons i mig fons', href: '/tecnificacio/fons' },
+    // { name: 'Llançaments', href: '/tecnificacio/llençaments' },
+    // { name: 'Veterans', href: '/tecnificacio/veterans' },
   ],
   competicions: [
-    {
-      name: 'Cursa Sant Vicenç',
-      href: 'publicacions/cursa-de-sant-vicenc-2022',
-    },
-    { name: 'Míting Ciutat de Mollet', href: '/properament' },
-    { name: 'Cross Escolar de Mollet', href: '/properament' },
-    {
-      name: '58é Campionats del Vallès',
-      href: 'publicacions/58e-campionats-del-valles',
-    },
+    // {
+    //   name: 'Cursa Sant Vicenç',
+    //   href: 'publicacions/cursa-de-sant-vicenc-2022',
+    // },
+    // { name: 'Míting Ciutat de Mollet', href: '/properament' },
+    // { name: 'Cross Escolar de Mollet', href: '/properament' },
+    // {
+    //   name: '58é Campionats del Vallès',
+    //   href: 'publicacions/58e-campionats-del-valles',
+    // },
   ],
   legal: [
-    { name: 'Avís Legal', href: '/legal' },
-    { name: 'Política de cookies', href: '/cookies' },
-    { name: 'Política de privacitat i xarxes socials', href: '/privacitat' },
+    // { name: 'Avís Legal', href: '/legal' },
+    // { name: 'Política de cookies', href: '/cookies' },
+    // { name: 'Política de privacitat i xarxes socials', href: '/privacitat' },
     // { name: 'Privacy', href: '#' },
     // { name: 'Terms', href: '#' },
   ],
