@@ -9,30 +9,18 @@ import { Logo } from '@/components/Logo'
 import { NavLink } from '@/components/NavLink'
 
 const links = [
-  // {
-  //   name: 'Inici',
-  //   href: '/',
-  // },
-  // {
-  //   name: 'Club',
-  //   href: '/club/inscripcio',
-  // },
-  // {
-  //   name: 'Escola',
-  //   href: '/escola/inscripcio',
-  // },
-  // {
-  //   name: 'Cursa de Sant Vicenç',
-  //   href: 'publicacions/cursa-de-sant-vicenc-2025',
-  // },
-  // {
-  //   name: 'Miting Ciutat de Mollet',
-  //   href: '/properament',
-  // },
-  // {
-  //   name: 'Publicacions',
-  //   href: '/properament',
-  // },
+  {
+    name: 'Patrocinadors',
+    href: '/#patrocinadors',
+  },
+  {
+    name: 'Organitzadors',
+    href: '/#organitzadors',
+  },
+  {
+    name: 'Col·laboradors',
+    href: '/#colaboradors',
+  },
 ]
 
 function MobileNavLink({ href, children }) {
@@ -131,37 +119,30 @@ export function Header() {
     <header className="mt-6">
       <Container className="bg-white py-2">
         <nav className="relative z-50">
-          <div className="xs:grid-cols-3 grid grid-cols-4">
-            <div className="xs:col-span-2 col-span-3 flex justify-items-start">
+          <div className="flex items-center justify-between">
+            {/* Logo and Club Name */}
+            <div className="flex items-center">
               <Link href="/" aria-label="Home">
-                <Logo className="h-16 w-auto" />
+                <Logo className="h-12 w-auto sm:h-16" />
               </Link>
-              <span className="xs:text-2xl xs:mt-3 text-1xl mt-5 pl-6 font-black uppercase sm:text-3xl">
+              <span className="pl-3 text-lg font-black uppercase sm:pl-6 sm:text-2xl md:text-3xl">
                 Club Atlètic <span className="text-red-500">Mollet</span>
               </span>
             </div>
 
-            <div className="mt-4 justify-items-end">
-              {/* <Button
-                href="https://camollet.playoffinformatica.com/preinscripcion/?fbclid=PAAabGXwZ2TPBtPxNWZEMnmo-UejWhgiq7pMGa_q0dCVbNDoGYbgf38-18_Sg"
-                color="red"
-                className="hidden md:flex"
-              >
-                <span>
-                  Fes-te soci <span className="hidden lg:inline">avui</span>
-                </span>
-              </Button> */}
-              <div className="flex justify-end md:hidden lg:mt-10">
-                <MobileNavigation />
-              </div>
+            {/* Desktop Navigation Links */}
+            <div className="hidden items-center gap-x-6 md:flex">
+              {links.map((link) => (
+                <NavLink key={link.name} href={link.href}>
+                  {link.name}
+                </NavLink>
+              ))}
             </div>
-          </div>
-          <div className="hidden justify-center md:flex md:gap-x-6">
-            {links.map((link) => (
-              <NavLink key={link.name} href={link.href}>
-                {link.name}
-              </NavLink>
-            ))}
+
+            {/* Mobile Navigation */}
+            <div className="flex md:hidden">
+              <MobileNavigation />
+            </div>
           </div>
         </nav>
       </Container>
