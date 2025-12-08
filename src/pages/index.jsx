@@ -52,30 +52,30 @@ function BackToTop() {
 }
 
 const sponsors = [
-  { src: '/logos/cursa/sponsors/Bensec.png', alt: 'Bensec' },
-  { src: '/logos/cursa/sponsors/Congost.png', alt: 'Congost Vigilancia y Seguridad' },
-  { src: '/logos/cursa/sponsors/El Comparador Seguro.png', alt: 'El Comparador Seguro' },
-  { src: '/logos/cursa/sponsors/Fumirrat.png', alt: 'Grupo Fumirrat - Cubas Palau' },
-  { src: '/logos/cursa/sponsors/Marcilla.png', alt: 'Marcilla Café' },
-  { src: '/logos/cursa/sponsors/Mirassport.png', alt: 'Mirassport' },
-  { src: '/logos/cursa/sponsors/Ibis.png', alt: 'Ibis Hotels' },
-  { src: '/logos/cursa/sponsors/Neoris.png', alt: 'Neoris' },
-  { src: '/logos/cursa/sponsors/Solblat.png', alt: 'Solblat Flequers 1875' },
-  { src: '/logos/cursa/sponsors/Esports10.png', alt: 'Esports 10' },
-  { src: '/logos/cursa/sponsors/Caprabo.png', alt: 'Caprabo' },
-  { src: '/logos/cursa/sponsors/FerreteriaMunosa.png', alt: 'Ferreteria de la Muñoza' },
+  { src: '/logos/Cursa/Sponsors/Bensec.png', alt: 'Bensec' },
+  { src: '/logos/Cursa/Sponsors/Congost.png', alt: 'Congost Vigilancia y Seguridad' },
+  { src: '/logos/Cursa/Sponsors/El Comparador Seguro.png', alt: 'El Comparador Seguro' },
+  { src: '/logos/Cursa/Sponsors/Fumirrat.png', alt: 'Grupo Fumirrat - Cubas Palau' },
+  { src: '/logos/Cursa/Sponsors/Marcilla.png', alt: 'Marcilla Café' },
+  { src: '/logos/Cursa/Sponsors/Mirassport.png', alt: 'Mirassport' },
+  { src: '/logos/Cursa/Sponsors/Ibis.png', alt: 'Ibis Hotels' },
+  { src: '/logos/Cursa/Sponsors/Neoris.png', alt: 'Neoris' },
+  { src: '/logos/Cursa/Sponsors/Solblat.png', alt: 'Solblat Flequers 1875' },
+  { src: '/logos/Cursa/Sponsors/Esports10.png', alt: 'Esports 10' },
+  { src: '/logos/Cursa/Sponsors/Caprabo.png', alt: 'Caprabo' },
+  { src: '/logos/Cursa/Sponsors/FerreteriaMunosa.png', alt: 'Ferreteria de la Muñoza' },
 ]
 
 const organizers = [
-  { src: '/logos/cursa/organizers/Captura de pantalla 2025-12-08 a las 16.33.03.png', alt: 'Ajuntament de Mollet del Vallès' },
-  { src: '/logos/cursa/organizers/Captura de pantalla 2025-12-08 a las 16.33.12.png', alt: 'Club Atlètic Mollet' },
+  { src: '/logos/Cursa/Organizers/Captura de pantalla 2025-12-08 a las 16.33.03.png', alt: 'Ajuntament de Mollet del Vallès' },
+  { src: '/logos/Cursa/Organizers/Captura de pantalla 2025-12-08 a las 16.33.12.png', alt: 'Club Atlètic Mollet' },
 ]
 
 const collaborators = [
-  { src: '/logos/cursa/colaborators/Captura de pantalla 2025-12-08 a las 16.33.22.png', alt: 'Institut Guttmann' },
-  { src: '/logos/cursa/colaborators/Captura de pantalla 2025-12-08 a las 16.33.28.png', alt: 'Grup d\'Amics i Amigues Jordi Solé Tura' },
-  { src: '/logos/cursa/colaborators/Captura de pantalla 2025-12-08 a las 16.33.45.png', alt: 'Federació Catalana d\'Atletisme' },
-  { src: '/logos/cursa/colaborators/Captura de pantalla 2025-12-08 a las 16.33.52.png', alt: 'Diputació Barcelona' },
+  { src: '/logos/Cursa/Colaborators/guttmann.png', alt: 'Institut Guttmann' },
+  { src: '/logos/Cursa/Colaborators/jordi_sole_tura.png', alt: 'Grup d\'Amics i Amigues Jordi Solé Tura' },
+  { src: '/logos/Cursa/Colaborators/fca.png', alt: 'Federació Catalana d\'Atletisme' },
+  { src: '/logos/Cursa/Colaborators/diputacio_Barcelona.png', alt: 'Diputació Barcelona' },
 ]
 
 function LogoGrid({ logos, centered = false }) {
@@ -272,7 +272,7 @@ export default function Index() {
               <div className="animate-float-rotate">
                 <div className="rounded-2xl bg-white p-4 shadow-xl transition-shadow duration-300 hover:shadow-2xl">
                   <Image
-                    src="/logos/cursa/Obsequi.png"
+                    src="/logos/Cursa/Obsequi.png"
                     alt="Samarreta oficial Cursa Sant Vicenç 2026"
                     width={500}
                     height={500}

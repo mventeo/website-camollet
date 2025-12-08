@@ -164,7 +164,7 @@ export default function Reglament() {
                 </p>
                 <div className="overflow-hidden rounded-lg shadow-lg">
                   <Image
-                    src="/logos/cursa/Map.png"
+                    src="/logos/Cursa/Map.png"
                     alt="Mapa del recorregut de la cursa de 5 km i 10 km"
                     width={1700}
                     height={1100}
